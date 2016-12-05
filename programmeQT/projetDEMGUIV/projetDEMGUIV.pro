@@ -14,10 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialogacceslogiciel.cpp
+    dialogacceslogiciel.cpp \
+    dialoggestiondemenagement.cpp
 
 HEADERS  += mainwindow.h \
-    dialogacceslogiciel.h
+    dialogacceslogiciel.h \
+    dialoggestiondemenagement.h
 
 FORMS    += mainwindow.ui \
-    dialogacceslogiciel.ui
+    dialogacceslogiciel.ui \
+    dialoggestiondemenagement.ui
