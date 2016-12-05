@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS Conge;
 DROP TABLE IF EXISTS Agence;
 DROP TABLE IF EXISTS Permis;
 DROP TABLE IF EXISTS Vehicule;
+DROP TABLE IF EXISTS TypeVehicule;
 DROP TABLE IF EXISTS Salarie;
 DROP TABLE IF EXISTS Immobilisation;
 DROP TABLE IF EXISTS ControleTechnique;
@@ -39,6 +40,12 @@ CREATE TABLE Permis (
 	libelle VARCHAR(2))
 ENGINE = InnoDB DEFAULT CHARSET utf8;
 
+CREATE TABLE TypeVehicule (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	ptac VARCHAR(20),
+	frequenceEntretien VARCHAR(30))
+ENGINE = InnoDB DEFAULT CHARSET utf8;
+
 CREATE TABLE Vehicule (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	immat VARCHAR(30),
@@ -48,10 +55,10 @@ CREATE TABLE Vehicule (
 	hayon BOOL,
 	couchette BOOL,
 	nbPlaceCabine INT,
-	ptac VARCHAR(20),
-	frequenceEntretien VARCHAR(30),
+	etat VARCHAR(30),
 	idAgence INT NOT NULL REFERENCES Agence(id),
-	idPermis INT NOT NULL REFERENCES Permis(id))
+	idPermis INT NOT NULL REFERENCES Permis(id),
+	idType INT NOT NULL REFERENCES TypeVehicule(id))
 ENGINE = InnoDB DEFAULT CHARSET utf8;
 
 CREATE TABLE Salarie (
@@ -65,7 +72,8 @@ CREATE TABLE Salarie (
 	idAgence INT NOT NULL REFERENCES Agence(id),
 	idPermis INT NOT NULL REFERENCES Permis(id),
 	chef BOOL,
-	experience VARCHAR(30))
+	experience VARCHAR(30),
+	etat VARCHAR(30))
 ENGINE = InnoDB DEFAULT CHARSET utf8;
 
 CREATE TABLE Immobilisation (
@@ -190,7 +198,7 @@ CREATE TABLE etreChefEquipe (
 	PRIMARY KEY(sal_id, dos_id))
 ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-DROP VIEW chef;
+DROP VIEW IF EXISTS Chef;
 
 CREATE VIEW Chef AS 
 SELECT * 
