@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QtSql/QSqlDatabase>
+#include <dialogacceslogiciel.h>
 
 int main(int argc, char *argv[])
 {
@@ -12,9 +13,14 @@ int main(int argc, char *argv[])
     maBase.setDatabaseName("Demenagement");
     if(maBase.open())
     {
-        MainWindow w;
-         w.show();
-        return a.exec();
+        DialogAccesLogiciel boiteDeCo;
+        if(boiteDeCo.exec()==QDialog::Accepted)
+        {
+            MainWindow w;
+             w.show();
+            return a.exec();
+        }
+
     }
 
     return a.exec();
