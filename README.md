@@ -13,7 +13,7 @@ Logiciel PSDEM (Planification-Suivi Déménagement) est composée :
 		
 		- Module de gestion des véhicules
 
-Participants :
+[P]articipants :
 
 	- Alex BOURDON (Chef d'équipe)
 	
