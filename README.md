@@ -1,6 +1,6 @@
 # ProjetDEMGUIV
 
-Projet de developpement d'une application de gestion des déménagements
+Projet de developpement d'une application de gestion des déménagements.
 
 
 Logiciel PSDEM (Planification-Suivi Déménagement) est composée :
