@@ -1,0 +1,265 @@
+Liste des tables :
++------------------------+
+| Tables_in_Demenagement |
++------------------------+
+| Agence                 |
+| Arret                  |
+| Chef                   |
+| Concerner              |
+| Conge                  |
+| ControleTechnique      |
+| Dependre               |
+| DossierDemenagement    |
+| Garage                 |
+| Gerer                  |
+| Immobilisation         |
+| Justifier              |
+| MotifArret             |
+| MotifConge             |
+| Participer             |
+| Permis                 |
+| Salarie                |
+| Travailler             |
+| TypeVehicule           |
+| Utiliser               |
+| Vehicule               |
+| etreChefEquipe         |
++------------------------+
+
+Champs de la table Agence :
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nom       | varchar(30) | YES  |     | NULL    |                |
+| adresse   | varchar(50) | YES  |     | NULL    |                |
+| telephone | varchar(20) | YES  |     | NULL    |                |
+| fax       | varchar(20) | YES  |     | NULL    |                |
+| mail      | varchar(30) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+
+Champs de la table Arret :
++-------------------+-------------+------+-----+---------+----------------+
+| Field             | Type        | Null | Key | Default | Extra          |
++-------------------+-------------+------+-----+---------+----------------+
+| id                | int(11)     | NO   | PRI | NULL    | auto_increment |
+| idSalarie         | int(11)     | NO   |     | NULL    |                |
+| idMotif           | int(11)     | NO   |     | NULL    |                |
+| dateDebut         | varchar(30) | YES  |     | NULL    |                |
+| dateFin           | varchar(30) | YES  |     | NULL    |                |
+| certificatMedical | tinyint(1)  | YES  |     | NULL    |                |
++-------------------+-------------+------+-----+---------+----------------+
+
+Champs de la table Chef :
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| id                | int(11)     | NO   |     | 0       |       |
+| dateOuverture     | varchar(30) | YES  |     | NULL    |       |
+| dateDebutDem      | varchar(30) | YES  |     | NULL    |       |
+| dateFinDem        | varchar(30) | YES  |     | NULL    |       |
+| volume            | int(11)     | YES  |     | NULL    |       |
+| nombreKm          | int(11)     | YES  |     | NULL    |       |
+| adresseChargement | varchar(30) | YES  |     | NULL    |       |
+| adresseLivraison  | varchar(30) | YES  |     | NULL    |       |
+| etatDossier       | varchar(30) | YES  |     | NULL    |       |
+| nbDemenageur      | int(11)     | YES  |     | NULL    |       |
+| dateCloture       | varchar(30) | YES  |     | NULL    |       |
+| commercial        | int(11)     | NO   |     | NULL    |       |
+| chefEquipe        | int(11)     | NO   |     | NULL    |       |
+| idAgence          | int(11)     | NO   |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+
+Champs de la table Concerner :
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| con_id | int(11) | NO   | PRI | NULL    |       |
+| sal_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+Champs de la table Conge : 
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| idSalarie   | int(11)     | NO   |     | NULL    |                |
+| idMotif     | int(11)     | NO   |     | NULL    |                |
+| dateDebut   | varchar(30) | YES  |     | NULL    |                |
+| dateFin     | varchar(30) | YES  |     | NULL    |                |
+| dateDemande | varchar(30) | YES  |     | NULL    |                |
+| etatDemande | varchar(3)  | YES  |     | NULL    |                |
+| dateReponse | varchar(30) | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+Champs de la table ControleTechnique :
++------------+------------+------+-----+---------+----------------+
+| Field      | Type       | Null | Key | Default | Extra          |
++------------+------------+------+-----+---------+----------------+
+| id         | int(11)    | NO   | PRI | NULL    | auto_increment |
+| idVehicule | int(11)    | NO   |     | NULL    |                |
+| resultat   | varchar(1) | YES  |     | NULL    |                |
+| idGarage   | int(11)    | NO   |     | NULL    |                |
++------------+------------+------+-----+---------+----------------+
+
+Champs de la table Dependre :
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| age_id | int(11) | NO   | PRI | NULL    |       |
+| veh_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+Champs de la table DossierDemenagement :
++-------------------+-------------+------+-----+---------+----------------+
+| Field             | Type        | Null | Key | Default | Extra          |
++-------------------+-------------+------+-----+---------+----------------+
+| id                | int(11)     | NO   | PRI | NULL    | auto_increment |
+| dateOuverture     | varchar(30) | YES  |     | NULL    |                |
+| dateDebutDem      | varchar(30) | YES  |     | NULL    |                |
+| dateFinDem        | varchar(30) | YES  |     | NULL    |                |
+| volume            | int(11)     | YES  |     | NULL    |                |
+| nombreKm          | int(11)     | YES  |     | NULL    |                |
+| adresseChargement | varchar(30) | YES  |     | NULL    |                |
+| adresseLivraison  | varchar(30) | YES  |     | NULL    |                |
+| etatDossier       | varchar(30) | YES  |     | NULL    |                |
+| nbDemenageur      | int(11)     | YES  |     | NULL    |                |
+| dateCloture       | varchar(30) | YES  |     | NULL    |                |
+| commercial        | int(11)     | NO   |     | NULL    |                |
+| chefEquipe        | int(11)     | NO   |     | NULL    |                |
+| idAgence          | int(11)     | NO   |     | NULL    |                |
++-------------------+-------------+------+-----+---------+----------------+
+
+Champs de la table Garage : 
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nom       | varchar(30) | YES  |     | NULL    |                |
+| adresse   | varchar(30) | YES  |     | NULL    |                |
+| telephone | varchar(30) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+
+Champs de la table Gerer : 
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| age_id | int(11) | NO   | PRI | NULL    |       |
+| dos_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+Champs de la table Immobilisation :
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int(11)     | NO   | PRI | NULL    | auto_increment |
+| idVehicule  | int(11)     | NO   |     | NULL    |                |
+| typeImmo    | varchar(30) | YES  |     | NULL    |                |
+| kilometrage | int(11)     | YES  |     | NULL    |                |
+| dateDebut   | varchar(30) | YES  |     | NULL    |                |
+| dateFin     | varchar(30) | YES  |     | NULL    |                |
+| info        | varchar(30) | YES  |     | NULL    |                |
+| idGarage    | int(11)     | NO   |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+Champs de la table Justifier :
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| con_id | int(11) | NO   | PRI | NULL    |       |
+| mot_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+Champs de la table MotifArret :
++---------+-------------+------+-----+---------+----------------+
+| Field   | Type        | Null | Key | Default | Extra          |
++---------+-------------+------+-----+---------+----------------+
+| id      | int(11)     | NO   | PRI | NULL    | auto_increment |
+| libelle | varchar(30) | YES  |     | NULL    |                |
++---------+-------------+------+-----+---------+----------------+
+
+Champs de la table MotifConge :
++---------+-------------+------+-----+---------+----------------+
+| Field   | Type        | Null | Key | Default | Extra          |
++---------+-------------+------+-----+---------+----------------+
+| id      | int(11)     | NO   | PRI | NULL    | auto_increment |
+| libelle | varchar(30) | YES  |     | NULL    |                |
++---------+-------------+------+-----+---------+----------------+
+
+Champs de la table Participer :
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| sal_id | int(11) | NO   | PRI | NULL    |       |
+| dos_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+Champs de la table Permis :
++---------+------------+------+-----+---------+----------------+
+| Field   | Type       | Null | Key | Default | Extra          |
++---------+------------+------+-----+---------+----------------+
+| id      | int(11)    | NO   | PRI | NULL    | auto_increment |
+| libelle | varchar(2) | YES  |     | NULL    |                |
++---------+------------+------+-----+---------+----------------+
+
+Champs de la table Salarie :
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| id            | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nom           | varchar(30) | YES  |     | NULL    |                |
+| prenom        | varchar(30) | YES  |     | NULL    |                |
+| dateNaissance | varchar(30) | YES  |     | NULL    |                |
+| dateEmbauche  | varchar(30) | YES  |     | NULL    |                |
+| adresse       | varchar(30) | YES  |     | NULL    |                |
+| typeSalarie   | varchar(1)  | YES  |     | NULL    |                |
+| idAgence      | int(11)     | NO   |     | NULL    |                |
+| idPermis      | int(11)     | NO   |     | NULL    |                |
+| chef          | tinyint(1)  | YES  |     | NULL    |                |
+| experience    | varchar(30) | YES  |     | NULL    |                |
+| etat          | varchar(30) | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+
+Champs de la table Travailler :
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| sal_id | int(11) | NO   | PRI | NULL    |       |
+| age_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+Champs de la table Utiliser :
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| veh_id | int(11) | NO   | PRI | NULL    |       |
+| dos_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+Champs de la table Vehicule :
++---------------------+-------------+------+-----+---------+----------------+
+| Field               | Type        | Null | Key | Default | Extra          |
++---------------------+-------------+------+-----+---------+----------------+
+| id                  | int(11)     | NO   | PRI | NULL    | auto_increment |
+| immat               | varchar(30) | YES  |     | NULL    |                |
+| modele              | varchar(30) | YES  |     | NULL    |                |
+| dateMiseCirculation | varchar(30) | YES  |     | NULL    |                |
+| volumeUtile         | float       | YES  |     | NULL    |                |
+| hayon               | tinyint(1)  | YES  |     | NULL    |                |
+| couchette           | tinyint(1)  | YES  |     | NULL    |                |
+| nbPlaceCabine       | int(11)     | YES  |     | NULL    |                |
+| etat                | varchar(30) | YES  |     | NULL    |                |
+| idAgence            | int(11)     | NO   |     | NULL    |                |
+| idPermis            | int(11)     | NO   |     | NULL    |                |
+| idType              | int(11)     | NO   |     | NULL    |                |
++---------------------+-------------+------+-----+---------+----------------+
+
+Champs de la table etreChefEquipe :
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| sal_id | int(11) | NO   | PRI | NULL    |       |
+| dos_id | int(11) | NO   | PRI | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+
