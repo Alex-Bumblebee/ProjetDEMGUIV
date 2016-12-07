@@ -40,7 +40,6 @@ HEADERS  += mainwindow.h \
     commercial.h \
     agence.h \
     absence.h \
-
     dialogGestionDemenagement.h
 
 FORMS    += mainwindow.ui \
