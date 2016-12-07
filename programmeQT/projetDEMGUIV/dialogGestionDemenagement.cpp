@@ -1,5 +1,5 @@
-#include "dialoggestiondemenagement.h"
-#include "ui_dialoggestiondemenagement.h"
+#include "dialogGestionDemenagement.h"
+#include "ui_dialogGestionDemenagement.h"
 
 DialogGestionDemenagement::DialogGestionDemenagement(QWidget *parent) :
     QDialog(parent),
