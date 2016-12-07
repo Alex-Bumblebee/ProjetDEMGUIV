@@ -15,7 +15,6 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     dialogacceslogiciel.cpp \
-    dialoggestiondemenagement.cpp \
     vehicule.cpp \
     salarie.cpp \
     maladie.cpp \
@@ -25,11 +24,13 @@ SOURCES += main.cpp\
     conge.cpp \
     commercial.cpp \
     agence.cpp \
-    absence.cpp
+    absence.cpp \
+    dialogGestionDemenagement.cpp \
+    dialogGestionDemenagementCreer.cpp \
+    dialogGestionDemenagementModifier.cpp
 
 HEADERS  += mainwindow.h \
     dialogacceslogiciel.h \
-    dialoggestiondemenagement.h \
     vehicule.h \
     salarie.h \
     maladie.h \
@@ -39,8 +40,13 @@ HEADERS  += mainwindow.h \
     conge.h \
     commercial.h \
     agence.h \
-    absence.h
+    absence.h \
+    dialogGestionDemenagementCreer.h \
+    dialogGestionDemenagementModifier.h \
+    dialogGestionDemenagement.h
 
 FORMS    += mainwindow.ui \
     dialogacceslogiciel.ui \
-    dialoggestiondemenagement.ui
+    dialogGestionDemenagement.ui \
+    dialogGestionDemenagementCreer.ui \
+    dialogGestionDemenagementModifier.ui
