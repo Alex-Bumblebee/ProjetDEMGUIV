@@ -1,0 +1,12 @@
+insert into Agence values (1,"To risk","05 rue de la crémailliere","0453625763","0432869752","torisk@gmail.com"),(2,"SMEGMA","16 avenue St Charles","0457935621","04561638742","smegmaAgency@gmail.com");
+insert into Permis values (1,"B1"),(2,"C"),(3,"B2");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
+insert into values ("","","","");
