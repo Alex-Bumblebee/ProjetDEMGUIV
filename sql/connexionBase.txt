@@ -1,0 +1,2 @@
+Connexion à la base Demenagement depuis un poste distant : 
+mysql -h172.29.56.11 -p -uuserDemenagement Demenagement
