@@ -6,59 +6,92 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
-    <height>314</height>
+    <width>1006</width>
+    <height>918</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PSDEM</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QFormLayout" name="formLayout">
+    <property name="fieldGrowthPolicy">
+     <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+    </property>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonGestionDemenagements">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Gestion des dossiers de déménagements</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonGestionDemenagements">
+          <property name="minimumSize">
+           <size>
+            <width>291</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Gestion des dossiers de déménagements</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonConsultDossier">
+          <property name="minimumSize">
+           <size>
+            <width>291</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Consulter les dossiers</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonAbsenceSalarie">
+          <property name="minimumSize">
+           <size>
+            <width>291</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Gestion des absences des salariés</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
-    <item>
+    <item row="1" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <spacer name="horizontalSpacer_3">
@@ -74,7 +107,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="pushButtonFicheSuivi">
         <property name="minimumSize">
          <size>
           <width>291</width>
@@ -82,7 +115,33 @@
          </size>
         </property>
         <property name="text">
-         <string>Consulter les dossiers</string>
+         <string>Fiche de suivi des véhicules</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonConge">
+        <property name="minimumSize">
+         <size>
+          <width>291</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Demande de congés</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonGestionRapport">
+        <property name="minimumSize">
+         <size>
+          <width>291</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Gestion de rapport</string>
         </property>
        </widget>
       </item>
@@ -101,208 +160,27 @@
       </item>
      </layout>
     </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <spacer name="horizontalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Gestion des absences des salariés</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_6">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <spacer name="horizontalSpacer_7">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Fiche de suivi des véhicules</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_8">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
-      <item>
-       <spacer name="horizontalSpacer_9">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Demande de congés</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_10">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
-       <spacer name="horizontalSpacer_11">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Gestion de rapport</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_12">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
    </layout>
    <zorder>pushButtonGestionDemenagements</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>label</zorder>
+   <zorder>pushButtonAbsenceSalarie</zorder>
+   <zorder>pushButtonFicheSuivi</zorder>
+   <zorder>pushButtonConge</zorder>
+   <zorder>pushButtonGestionRapport</zorder>
+   <zorder>pushButtonConsultDossier</zorder>
+   <zorder>pushButtonGestionDemenagements</zorder>
+   <zorder></zorder>
+   <zorder></zorder>
    <zorder>horizontalSpacer</zorder>
    <zorder>horizontalSpacer_2</zorder>
    <zorder>horizontalSpacer_3</zorder>
-   <zorder>horizontalSpacer_4</zorder>
-   <zorder>horizontalSpacer_5</zorder>
-   <zorder>horizontalSpacer_6</zorder>
-   <zorder>horizontalSpacer_7</zorder>
-   <zorder>horizontalSpacer_8</zorder>
-   <zorder>horizontalSpacer_9</zorder>
-   <zorder>horizontalSpacer_10</zorder>
-   <zorder>horizontalSpacer_11</zorder>
-   <zorder>horizontalSpacer_12</zorder>
-   <zorder>horizontalSpacer_13</zorder>
-   <zorder>horizontalSpacer_14</zorder>
-   <zorder>pushButtonGestionDemenagements</zorder>
+   <zorder></zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>403</width>
+     <width>1006</width>
      <height>29</height>
     </rect>
    </property>
