@@ -6,184 +6,192 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1006</width>
-    <height>918</height>
+    <width>408</width>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QFormLayout" name="formLayout">
-    <property name="fieldGrowthPolicy">
-     <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>295</width>
+      <height>406</height>
+     </rect>
     </property>
-    <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButtonGestionDemenagements">
-          <property name="minimumSize">
-           <size>
-            <width>291</width>
-            <height>31</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Gestion des dossiers de déménagements</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButtonConsultDossier">
-          <property name="minimumSize">
-           <size>
-            <width>291</width>
-            <height>31</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Consulter les dossiers</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButtonAbsenceSalarie">
-          <property name="minimumSize">
-           <size>
-            <width>291</width>
-            <height>31</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Gestion des absences des salariés</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonFicheSuivi">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Fiche de suivi des véhicules</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonConge">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Demande de congés</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonGestionRapport">
-        <property name="minimumSize">
-         <size>
-          <width>291</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Gestion de rapport</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-   </layout>
-   <zorder>pushButtonGestionDemenagements</zorder>
-   <zorder>pushButtonAbsenceSalarie</zorder>
-   <zorder>pushButtonFicheSuivi</zorder>
-   <zorder>pushButtonConge</zorder>
-   <zorder>pushButtonGestionRapport</zorder>
-   <zorder>pushButtonConsultDossier</zorder>
-   <zorder>pushButtonGestionDemenagements</zorder>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Agence machin</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Bonjour ,</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButtonDemandeAbsence">
+         <property name="text">
+          <string>Demander / signaler une absence</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonCreerDossier">
+         <property name="text">
+          <string>Créer un dossier</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonModifierDossier">
+         <property name="text">
+          <string>Modifier un dossier</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonConsultDossier">
+         <property name="minimumSize">
+          <size>
+           <width>291</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Consulter mes dossiers</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonAgenda">
+         <property name="text">
+          <string>Agenda</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonGererAbsence">
+         <property name="minimumSize">
+          <size>
+           <width>291</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Gérer les demandes d'absence</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonGererVehicules">
+         <property name="text">
+          <string>Gérer les véhicules</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonGererSalaries">
+         <property name="text">
+          <string>Gérer les salariés</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonCreerAgence">
+         <property name="text">
+          <string>Créer une agence</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
    <zorder></zorder>
    <zorder></zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>pushButtonDemandeAbsence</zorder>
+   <zorder>pushButtonCreerDossier</zorder>
+   <zorder>pushButtonModifierDossier</zorder>
+   <zorder>pushButtonAgenda</zorder>
+   <zorder>pushButtonGererVehicules</zorder>
+   <zorder>pushButtonCreerAgence</zorder>
+   <zorder>pushButtonGererSalaries</zorder>
    <zorder>horizontalSpacer</zorder>
    <zorder>horizontalSpacer_2</zorder>
-   <zorder>horizontalSpacer_3</zorder>
-   <zorder></zorder>
+   <zorder>verticalSpacer</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1006</width>
+     <width>408</width>
      <height>29</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMenu_principal">
+    <property name="title">
+     <string>Menu principal</string>
+    </property>
+   </widget>
+   <addaction name="menuMenu_principal"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

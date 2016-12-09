@@ -31,12 +31,11 @@ Chef d'équipe :
 
 Directeur ressources :
 	Gérer les demandes d'absences
-		Selection des abscences non traitées (tableau demandeur)
-	Gérer la maintenance des véhicules
-		Selection du vehicule
-			Menu de disponibilité (calendrier)
+		Selection des abscences non traitées (tableau demandeur)		
 	Gestion salariés
 	Gestion vehicules
+		Selection du vehicule
+			Menu de disponibilité (calendrier)
 	
 patron :
 	Tous les droits
