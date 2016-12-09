@@ -54,7 +54,8 @@ FORMS    += mainwindow.ui \
     dialogacceslogiciel.ui \
     dialogGestionDemenagement.ui \
     dialogGestionDemenagementCreer.ui \
-    dialogCreerAgence.ui
+    dialogCreerAgence.ui \
+    dialogGestionCommercial.ui
     dialogGestionCommercial.ui \
     dialogGestionDemenagementCreer.ui
 
