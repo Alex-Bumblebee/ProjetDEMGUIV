@@ -26,7 +26,9 @@ SOURCES += main.cpp\
     agence.cpp \
     absence.cpp \
     dialogGestionDemenagement.cpp \
-    dialogGestionCommercial.cpp
+    dialogGestionCommercial.cpp \
+    dialogGestiondemenagementCreer.cpp
+
 
 
 HEADERS  += mainwindow.h \
@@ -42,10 +44,13 @@ HEADERS  += mainwindow.h \
     agence.h \
     absence.h \
     dialogGestionDemenagement.h \
-    dialogGestionCommercial.h
+    dialogGestionCommercial.h \
+    dialogGestionDemenagementCreer.h
 
 FORMS    += mainwindow.ui \
     dialogacceslogiciel.ui \
     dialogGestionDemenagement.ui \
-    dialogGestionCommercial.ui
+    dialogGestionCommercial.ui \
+    dialogGestionDemenagementCreer.ui
+
 
