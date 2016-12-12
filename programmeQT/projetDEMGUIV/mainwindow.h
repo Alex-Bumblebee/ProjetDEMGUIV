@@ -18,6 +18,8 @@ public:
 private slots:
     void on_pushButtonGestionDemenagements_clicked();
 
+    void on_pushButtonGererVehicules_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
