@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>841</width>
+    <width>783</width>
     <height>538</height>
    </rect>
   </property>
@@ -29,7 +29,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
           <spacer name="horizontalSpacer_8">
            <property name="orientation">
@@ -69,7 +69,7 @@
         <widget class="QListWidget" name="listWidgetVehicules"/>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
           <spacer name="horizontalSpacer_9">
            <property name="orientation">
@@ -109,7 +109,7 @@
         <widget class="QListWidget" name="listWidgetDemenageurs"/>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
           <widget class="QLabel" name="label_7">
            <property name="text">
@@ -132,13 +132,6 @@
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
@@ -293,7 +286,7 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
           <widget class="QLabel" name="label_10">
            <property name="text">

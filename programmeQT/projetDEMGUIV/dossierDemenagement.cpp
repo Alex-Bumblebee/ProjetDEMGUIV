@@ -6,14 +6,9 @@ DossierDemenagement::DossierDemenagement ( ) {
 	initAttributes();
 }
 
-DossierDemenagement::DossierDemenagement(int monId, QString dateDebut, QString dateFin, int volume, QString adresseChargement, QString adresseLivraison)
+DossierDemenagement::DossierDemenagement(int monId)
 {
     dosNumero=monId;
-    dosDateDebutDem=dateDebut;
-    dosDateFinDem=dateFin;
-    dosVolume=volume;
-    dosAdresseChargement=adresseChargement;
-    dosAdresseLivraison=adresseLivraison;
 }
 
 

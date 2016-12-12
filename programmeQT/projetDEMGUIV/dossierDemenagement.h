@@ -44,7 +44,7 @@ public:
    * Constructors
    */
   DossierDemenagement ( );
-  DossierDemenagement(int monId, QString dateDebut, QString dateFin, int volume, QString adresseChargement, QString adresseLivraison);
+  DossierDemenagement(int monId);
 
   /**
    * Empty Destructor
