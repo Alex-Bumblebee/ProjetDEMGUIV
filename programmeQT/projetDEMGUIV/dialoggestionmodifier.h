@@ -22,6 +22,7 @@ private:
     Ui::DialogGestionModifier *ui;
 
     QVector <Demenageur> vectDemenageur;
+    QVector <Vehicule> vectVehicule;
 };
 
 #endif // DIALOGGESTIONMODIFIER_H

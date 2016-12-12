@@ -24,6 +24,9 @@ private slots:
     void on_listWidget_clicked(const QModelIndex &index);
     void chargeDossiers();
     void remplirListDossiers();
+    void chargeInfosDossier(QString monid);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::DialogConsulterDossiers *ui;

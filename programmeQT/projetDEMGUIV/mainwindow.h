@@ -24,6 +24,12 @@ private slots:
 
     void on_pushButtonCreerAgence_clicked();
 
+    void on_pushButtonCreerDossier_clicked();
+
+    void on_pushButtonModifierDossier_clicked();
+
+    void on_pushButtonConsultDossier_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
