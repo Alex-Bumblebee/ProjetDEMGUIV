@@ -20,6 +20,8 @@ private slots:
 
     void on_pushButtonGererVehicules_clicked();
 
+    void on_pushButtonGererAbsence_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
