@@ -38,3 +38,8 @@ void DialogCreerAgence::on_pushButtonCreerAgence_clicked()
     //Affiche la requete
     qDebug () << requeteInjectSQL;
 }
+
+void DialogCreerAgence::on_pushButtonAnnulerCreation_clicked()
+{
+   this->close();
+}

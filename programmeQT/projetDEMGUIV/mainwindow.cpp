@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "dialogabsence.h"
 #include "dialogGestionVehicules.h"
+#include "dialogCreerAgence.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -31,4 +33,10 @@ void MainWindow::on_pushButtonGererVehicules_clicked()
     //comm pour dadou <3
     DialogGestionVehicules diagVehicules;
     diagVehicules.exec();
+}
+
+void MainWindow::on_pushButtonCreerAgence_clicked()
+{
+        DialogCreerAgence diagCreerAgence;
+        diagCreerAgence.exec();
 }

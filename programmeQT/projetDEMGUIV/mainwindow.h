@@ -22,6 +22,8 @@ private slots:
 
     void on_pushButtonGererAbsence_clicked();
 
+    void on_pushButtonCreerAgence_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

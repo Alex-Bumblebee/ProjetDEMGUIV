@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButtonCreerAgence_clicked();
 
+    void on_pushButtonAnnulerCreation_clicked();
+
 private:
     Ui::DialogCreerAgence *ui;
     QVector<QString> vectAgence;
