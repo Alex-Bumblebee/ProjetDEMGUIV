@@ -2,6 +2,7 @@
 #define DIALOGCREERAGENCE_H
 
 #include <QDialog>
+#include <QVector>
 
 namespace Ui {
 class DialogCreerAgence;
@@ -18,8 +19,11 @@ public:
 private slots:
     void on_pushButtonCreerAgence_clicked();
 
+    void on_pushButtonAnnulerCreation_clicked();
+
 private:
     Ui::DialogCreerAgence *ui;
+    QVector<QString> vectAgence;
 };
 
 #endif // DIALOGCREERAGENCE_H

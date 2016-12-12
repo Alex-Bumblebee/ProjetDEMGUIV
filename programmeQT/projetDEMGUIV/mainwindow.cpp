@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dialogabsence.h"
+#include "dialogGestionVehicules.h"
+#include "dialogCreerAgence.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,13 +22,21 @@ void MainWindow::on_pushButtonGestionDemenagements_clicked()
 
 }
 
-void MainWindow::on_pushButtonGererVehicules_clicked()
-{
-
-}
-
 void MainWindow::on_pushButtonGererAbsence_clicked()
 {
     DialogAbsence diagAbsence;
     diagAbsence.exec();
+}
+
+void MainWindow::on_pushButtonGererVehicules_clicked()
+{
+    //comm pour dadou <3
+    DialogGestionVehicules diagVehicules;
+    diagVehicules.exec();
+}
+
+void MainWindow::on_pushButtonCreerAgence_clicked()
+{
+        DialogCreerAgence diagCreerAgence;
+        diagCreerAgence.exec();
 }

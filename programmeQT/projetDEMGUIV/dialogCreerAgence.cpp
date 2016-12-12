@@ -19,7 +19,7 @@ DialogCreerAgence::~DialogCreerAgence()
 void DialogCreerAgence::on_pushButtonCreerAgence_clicked()
 {
     QSqlQuery queryAjoutAgence;
-    QString requeteRecupMaxId("SELECT ifnull(max(ageId)+1,1) FROM agence");
+    QString requeteRecupMaxId("SELECT ifnull(max(ageId)+1,1) FROM Agence");
     queryAjoutAgence.exec(requeteRecupMaxId);
     queryAjoutAgence.first();
 
@@ -33,8 +33,13 @@ void DialogCreerAgence::on_pushButtonCreerAgence_clicked()
     queryAjoutAgence.clear();
 
     //Requête pour injecter les informations recuperer juste avant
-    QString requeteInjectSQL = "INSERT INTO contact VALUES('"+idAgence+"','"+nomAgence+"','"+adresseAgence+"','"+telAgence+"','"+faxAgence+"','"+mailAgence+"')";
+    QString requeteInjectSQL = "INSERT INTO Agence VALUES('"+idAgence+"','"+nomAgence+"','"+adresseAgence+"','"+telAgence+"','"+faxAgence+"','"+mailAgence+"')";
     queryAjoutAgence.exec(requeteInjectSQL);
     //Affiche la requete
     qDebug () << requeteInjectSQL;
+}
+
+void DialogCreerAgence::on_pushButtonAnnulerCreation_clicked()
+{
+   this->close();
 }
