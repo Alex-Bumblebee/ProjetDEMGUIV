@@ -21,14 +21,18 @@ void DialogConsulterDossiers::on_listWidget_clicked(const QModelIndex &index)
     qDebug()<<ui->listWidgetDossiers->item(index.row())->text();
     //recupere l'id dans le data de l'item selectionné
     QListWidgetItem* dossierSelectionne=ui->listWidgetDossiers->currentItem();
-    int id=dossierSelectionne->data(32);
+    QString id=dossierSelectionne->data(32).toString();
     chargeInfosDossier(id);
 }
 
-void DialogConsulterDossiers::chargeInfosDossier(int id)
+void DialogConsulterDossiers::chargeInfosDossier(QString monid)
 {
+    int id = monid.toInt();
     qDebug()<<"DialogConsulterDossiers::chargeInfosDossier()";
-    QSqlQuery reqVehicule("select id, immat, modele from Vehicule where id in (select veh_id from Utiliser where dos_id="+id+");");
+    QString textReq1 = "select id, immat, modele from Vehicule where id in (select veh_id from Utiliser where dos_id=";
+    textReq1 += id;
+    textReq1 += ");";
+    QSqlQuery reqVehicule(textReq1);
     while(reqVehicule.next())
     {
         int idVehicule = reqVehicule.value(0).toInt();
@@ -37,11 +41,14 @@ void DialogConsulterDossiers::chargeInfosDossier(int id)
 
         QString immatModeleVeh = immatVehicule + " " + modeleVehicule;
         qDebug()<<immatModeleVeh;
-        QListWidget* monVehicule=new QListWidget(immatModeleVeh);
-        monVehicule->setData(32,idVehicule);
-        ui->listWidgetDemenageurs->addItem(monVehicule);
+        QListWidgetItem* monVehicule=new QListWidgetItem(immatModeleVeh);
+        monVehicule->setData(32,QString::number(idVehicule));
+        ui->listWidgetVehicules->addItem(monVehicule);
     }
-    QSqlQuery reqDemenageur("select id, nom, prenom from Salarie where typeSalarie = 'D' and id in(select sal_id from Participer where dos_id="+id+");");
+    QString textReq2 = "select id, nom, prenom from Salarie where typeSalarie = 'D' and id in(select sal_id from Participer where dos_id=";
+    textReq2 += id;
+    textReq2 += ");";
+    QSqlQuery reqDemenageur(textReq2);
     while(reqDemenageur.next())
     {
         int idDemenageur = reqDemenageur.value(0).toInt();
@@ -50,8 +57,8 @@ void DialogConsulterDossiers::chargeInfosDossier(int id)
 
         QString prenomNomDem = prenomDemenageur + " " + nomDemenageur;
         qDebug()<<prenomNomDem;
-        QListWidget* monDemenageur=new QListWidget(prenomNomDem);
-        monDemenageur->setData(32,idDemenageur);
+        QListWidgetItem* monDemenageur=new QListWidgetItem(prenomNomDem);
+        monDemenageur->setData(32,QString::number(idDemenageur));
         ui->listWidgetDemenageurs->addItem(monDemenageur);
     }
 
