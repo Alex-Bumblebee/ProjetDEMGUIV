@@ -14,7 +14,10 @@ class DialogCreerAgence : public QDialog
 public:
     explicit DialogCreerAgence(QWidget *parent = 0);
     ~DialogCreerAgence();
-    
+
+private slots:
+    void on_pushButtonCreerAgence_clicked();
+
 private:
     Ui::DialogCreerAgence *ui;
 };

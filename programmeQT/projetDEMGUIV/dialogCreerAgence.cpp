@@ -1,5 +1,7 @@
 #include "dialogCreerAgence.h"
 #include "ui_dialogCreerAgence.h"
+#include <QDebug>
+#include <QSqlQuery>
 
 DialogCreerAgence::DialogCreerAgence(QWidget *parent) :
     QDialog(parent),
