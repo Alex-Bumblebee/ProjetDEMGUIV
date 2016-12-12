@@ -2,6 +2,7 @@
 #define DIALOGCREERAGENCE_H
 
 #include <QDialog>
+#include <QVector>
 
 namespace Ui {
 class DialogCreerAgence;
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::DialogCreerAgence *ui;
+    QVector<QString> vectAgence;
 };
 
 #endif // DIALOGCREERAGENCE_H
