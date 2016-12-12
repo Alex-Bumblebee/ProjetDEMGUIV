@@ -64,7 +64,7 @@ void DialogConsulterDossiers::chargeInfosDossier(int id)
         monDemenageur->setData(32,QString::number(idDemenageur));
         ui->listWidgetDemenageurs->addItem(monDemenageur);
     }
-    QSqlQuery reqDossier("select dateDebutDem, dateFinDem, volume, adresseChargement, adresseLivraison from DossierDemenagement;");
+    QSqlQuery reqDossier("select dateDebutDem, dateFinDem, volume, adresseChargement, adresseLivraison,  from DossierDemenagement;");
     while(reqDossier.next())
     {
         QString dateDebut = reqDossier.value(0).toString();
@@ -78,6 +78,8 @@ void DialogConsulterDossiers::chargeInfosDossier(int id)
         ui->labelVolume->setText(QString::number(volume));
         ui->labelAdresseChargement->setText(adresseChargement);
         ui->labelAdresseLivraison->setText(adresseLivraison);
+        //Il faut trouver comment on spécifie le chef équipe
+        //ui->labelChefEquipe->setText();
     }
 
 }
@@ -122,5 +124,3 @@ void DialogConsulterDossiers::on_pushButton_clicked()
 {
     reject();
 }
-
-
