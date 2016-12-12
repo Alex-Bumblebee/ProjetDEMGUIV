@@ -16,22 +16,25 @@ DialogConsulterDossiers::~DialogConsulterDossiers()
     delete ui;
 }
 
-void DialogConsulterDossiers::on_listWidget_clicked(const QModelIndex &index)
+void DialogConsulterDossiers::on_listWidgetDossiers_itemClicked(QListWidgetItem *item)
 {
-    qDebug()<<ui->listWidgetDossiers->item(index.row())->text();
+    //qDebug()<<ui->listWidgetDossiers->item(index.row())->text();
     //recupere l'id dans le data de l'item selectionné
     QListWidgetItem* dossierSelectionne=ui->listWidgetDossiers->currentItem();
-    QString id=dossierSelectionne->data(32).toString();
+    int id=dossierSelectionne->data(32).toInt();
+    qDebug()<<id;
     chargeInfosDossier(id);
 }
 
-void DialogConsulterDossiers::chargeInfosDossier(QString monid)
+void DialogConsulterDossiers::chargeInfosDossier(int id)
 {
-    int id = monid.toInt();
+    ui->listWidgetDemenageurs->clear();
+    ui->listWidgetVehicules->clear();
     qDebug()<<"DialogConsulterDossiers::chargeInfosDossier()";
     QString textReq1 = "select id, immat, modele from Vehicule where id in (select veh_id from Utiliser where dos_id=";
-    textReq1 += id;
+    textReq1 += QString::number(id);
     textReq1 += ");";
+    qDebug()<<textReq1;
     QSqlQuery reqVehicule(textReq1);
     while(reqVehicule.next())
     {
@@ -46,7 +49,7 @@ void DialogConsulterDossiers::chargeInfosDossier(QString monid)
         ui->listWidgetVehicules->addItem(monVehicule);
     }
     QString textReq2 = "select id, nom, prenom from Salarie where typeSalarie = 'D' and id in(select sal_id from Participer where dos_id=";
-    textReq2 += id;
+    textReq2 += QString::number(id);
     textReq2 += ");";
     QSqlQuery reqDemenageur(textReq2);
     while(reqDemenageur.next())
@@ -61,22 +64,32 @@ void DialogConsulterDossiers::chargeInfosDossier(QString monid)
         monDemenageur->setData(32,QString::number(idDemenageur));
         ui->listWidgetDemenageurs->addItem(monDemenageur);
     }
+    QSqlQuery reqDossier("select dateDebutDem, dateFinDem, volume, adresseChargement, adresseLivraison from DossierDemenagement;");
+    while(reqDossier.next())
+    {
+        QString dateDebut = reqDossier.value(0).toString();
+        QString dateFin = reqDossier.value(1).toString();
+        int volume = reqDossier.value(2).toInt();
+        QString adresseChargement = reqDossier.value(3).toString();
+        QString adresseLivraison = reqDossier.value(4).toString();
+
+        ui->labelDateDebut->setText(dateDebut);
+        ui->labelDateFin->setText(dateFin);
+        ui->labelVolume->setText(QString::number(volume));
+        ui->labelAdresseChargement->setText(adresseChargement);
+        ui->labelAdresseLivraison->setText(adresseLivraison);
+    }
 
 }
 
 void DialogConsulterDossiers::chargeDossiers()
 {
     qDebug()<<"DialogConsulterDossiers::chargeDossiers()";
-    QSqlQuery reqDossier("select id, dateDebutDem, dateFinDem, volume, adresseChargement, adresseLivraison from DossierDemenagement;");
+    QSqlQuery reqDossier("select id from DossierDemenagement;");
     while(reqDossier.next())
     {
         int idDossier = reqDossier.value(0).toInt();
-        QString dateDebut = reqDossier.value(1).toString();
-        QString dateFin = reqDossier.value(2).toString();
-        int volume = reqDossier.value(3).toInt();
-        QString adresseChargement = reqDossier.value(4).toString();
-        QString adresseLivraison = reqDossier.value(5).toString();
-        DossierDemenagement nouveauDossier(idDossier,dateDebut,dateFin,volume,adresseChargement,adresseLivraison);
+        DossierDemenagement nouveauDossier(idDossier);
         vectDossiers.push_back(nouveauDossier);
     }
     remplirListDossiers();
@@ -94,7 +107,7 @@ void DialogConsulterDossiers::remplirListDossiers()
     for(int i=0; i<vectDossiers.size();i++)
     {
         //concatenation dossier + numero
-        QString dos = "dossier numero " + vectDossiers[i].getDosNumero();
+        QString dos = "dossier numero " + QString::number(vectDossiers[i].getDosNumero());
         qDebug()<<dos;
         //l'ajoute dans la liste en y associant en data l'id
         QListWidgetItem* unDossier=new QListWidgetItem(dos);
@@ -109,3 +122,5 @@ void DialogConsulterDossiers::on_pushButton_clicked()
 {
     reject();
 }
+
+
