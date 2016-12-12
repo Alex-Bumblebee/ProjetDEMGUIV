@@ -11,7 +11,7 @@ DialogGestionModifier::DialogGestionModifier(QWidget *parent) :
     ui->setupUi(this);
 
     chargerDemenageur();
-
+    chargerVehicule();
 }
 
 DialogGestionModifier::~DialogGestionModifier()
@@ -24,7 +24,7 @@ void DialogGestionModifier::chargerDemenageur()
 {
     qDebug()<<"DialogGestionModifier::chargerDemenageur()"<<endl;
 
-    QSqlQuery reqDemenageur("select id,nom,prenom,dateNaissance,dateEmbauche,adresse,idAgence,idPermis,chef from Salaire where typeSalarie='D' and etat='disponible'");
+    QSqlQuery reqDemenageur("select id,nom,prenom,dateNaissance,dateEmbauche,adresse,idAgence,idPermis,chef from Salarie where typeSalarie='D' and etat='disponible'");
     while(reqDemenageur.next())
     {
         int idDem=reqDemenageur.value(0).toInt();
@@ -62,7 +62,7 @@ void DialogGestionModifier::chargerDemenageur()
             qDebug()<<dem;
             //l'ajoute dans la liste en y associant en data l'id
             QListWidgetItem* unDemenageur=new QListWidgetItem(dem);
-            unDemenageur->setData(32,QString::number(vectDemenageur[i].getSalId()));
+            unDemenageur->setData(32,vectDemenageur[i].getSalId());
             ui->listWidgetDemenageur->addItem(unDemenageur);
         }
         //trie la liste
@@ -73,9 +73,9 @@ void DialogGestionModifier::chargerDemenageur()
 
 void DialogGestionModifier::chargerVehicule()
 {
-    qDebug()<<"DialogGestionModifier::chargerDemenageur()"<<endl;
+    qDebug()<<"DialogGestionModifier::chargerVehicule()"<<endl;
 
-    QSqlQuery reqVehicule("select id,immat,modele,dateMiseCirculation,volumeUtile,hayon,couchette,nbPlaceCabine,ptac,frequenceEntretien,idAgence from Vehicule inner join TypeVehicule on Vehicule.idType=TypeVehicule.id where etat='disponible';");
+    QSqlQuery reqVehicule("select Vehicule.id,immat,modele,dateMiseCirculation,volumeUtile,hayon,couchette,nbPlaceCabine,ptac,frequenceEntretien,idAgence from Vehicule inner join TypeVehicule on Vehicule.idType=TypeVehicule.id where etat='disponible'");
 
     while(reqVehicule.next())
     {
@@ -106,4 +106,89 @@ void DialogGestionModifier::chargerVehicule()
 
         vectVehicule.push_back(leVehicule);
     }
+
+
+    //efface la liste
+    ui->listWidgetVehicule->clear();
+    //pour chaque occurence du vecteur
+
+    for(int i=0; i<vectVehicule.size();i++)
+    {
+        //concatene le nom avec le prenom
+        QString veh = vectVehicule[i].getVehType();
+        qDebug()<<veh;
+        //l'ajoute dans la liste en y associant en data l'id
+        QListWidgetItem* unVehicule=new QListWidgetItem(veh);
+        unVehicule->setData(32,vectVehicule[i].getVehId());
+        ui->listWidgetVehicule->addItem(unVehicule);
+    }
+    //trie la liste
+    ui->listWidgetVehicule->sortItems();
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void DialogGestionModifier::on_pushButtonAddVehicule_clicked()
+{
+    QListWidgetItem* vehiculeChoisi=ui->listWidgetVehicule->currentItem();
+    int monVehicule=vehiculeChoisi->data(32).toInt();
+    for(int cpt=0;cpt<vectVehicule.size();cpt++)
+    {
+        if(monVehicule==vectVehicule[cpt].getVehId())
+        {
+            vectVehiculeAjouter.push_back(vectVehicule[cpt]);
+
+        }
+
+    }
+
+    //efface la liste
+    ui->listWidgetVehiculeDemenagement->clear();
+    //pour chaque occurence du vecteur
+
+    for(int i=0; i<vectVehiculeAjouter.size();i++)
+    {
+        //concatene le nom avec le prenom
+        QString veh = vectVehiculeAjouter[i].getVehType();
+        qDebug()<<veh;
+        //l'ajoute dans la liste en y associant en data l'id
+        QListWidgetItem* unVehicule=new QListWidgetItem(veh);
+        unVehicule->setData(32,vectVehiculeAjouter[i].getVehId());
+        ui->listWidgetVehiculeDemenagement->addItem(unVehicule);
+    }
+    //trie la liste
+    ui->listWidgetVehicule->sortItems();
+
+}
+
+void DialogGestionModifier::on_pushButtonDelVehicule_clicked()
+{
+    QListWidgetItem* vehiculeChoisi=ui->listWidgetVehiculeDemenagement->currentItem();
+    int monVehicule=vehiculeChoisi->data(32).toInt();
+    for(int cpt=0;cpt<vectVehiculeAjouter.size();cpt++)
+    {
+        if(monVehicule==vectVehiculeAjouter[cpt].getVehId())
+        {
+            vectVehiculeAjouter.remove(cpt);
+
+        }
+
+    }
+
+    //efface la liste
+    ui->listWidgetVehiculeDemenagement->clear();
+    //pour chaque occurence du vecteur
+
+    for(int i=0; i<vectVehiculeAjouter.size();i++)
+    {
+        //concatene le nom avec le prenom
+        QString veh = vectVehiculeAjouter[i].getVehType();
+        qDebug()<<veh;
+        //l'ajoute dans la liste en y associant en data l'id
+        QListWidgetItem* unVehicule=new QListWidgetItem(veh);
+        unVehicule->setData(32,vectVehiculeAjouter[i].getVehId());
+        ui->listWidgetVehiculeDemenagement->addItem(unVehicule);
+    }
+    //trie la liste
+    ui->listWidgetVehicule->sortItems();
 }

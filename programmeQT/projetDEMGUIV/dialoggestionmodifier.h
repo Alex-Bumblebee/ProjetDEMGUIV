@@ -18,10 +18,17 @@ public:
     ~DialogGestionModifier();
     void chargerDemenageur();
     void chargerVehicule();
+private slots:
+    void on_pushButtonAddVehicule_clicked();
+
+    void on_pushButtonDelVehicule_clicked();
+
 private:
     Ui::DialogGestionModifier *ui;
 
+    QVector <Demenageur> vectDemenageurAjouter;
     QVector <Demenageur> vectDemenageur;
+    QVector <Vehicule> vectVehiculeAjouter;
     QVector <Vehicule> vectVehicule;
 };
 
