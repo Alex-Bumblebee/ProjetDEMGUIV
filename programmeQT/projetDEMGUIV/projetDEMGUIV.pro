@@ -30,7 +30,7 @@ SOURCES += main.cpp\
     dialogGestionVehicules.cpp \
     dialogCreerAgence.cpp \
     dialogGestionCommercial.cpp \
-    dialogGestiondemenagementCreer.cpp
+    
 
 
 HEADERS  += mainwindow.h \
@@ -50,7 +50,7 @@ HEADERS  += mainwindow.h \
     dialogGestionVehicules.h \
     dialogCreerAgence.h \
     dialogGestionCommercial.h \
-    dialogGestionDemenagementCreer.h
+    
 
 FORMS    += mainwindow.ui \
     dialogacceslogiciel.ui \
@@ -60,6 +60,6 @@ FORMS    += mainwindow.ui \
     dialogCreerAgence.ui \
     dialogGestionCommercial.ui \
     dialogGestionCommercial.ui \
-    dialogGestionDemenagementCreer.ui
+    
 
 
