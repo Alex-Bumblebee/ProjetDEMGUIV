@@ -94,7 +94,7 @@ void DialogConsulterDossiers::remplirListDossiers()
     for(int i=0; i<vectDossiers.size();i++)
     {
         //concatenation dossier + numero
-        QString dos = "Dossier n° " + vectDossiers[i].getDosNumero();
+        QString dos = "dossier numero " + vectDossiers[i].getDosNumero();
         qDebug()<<dos;
         //l'ajoute dans la liste en y associant en data l'id
         QListWidgetItem* unDossier=new QListWidgetItem(dos);
@@ -103,4 +103,9 @@ void DialogConsulterDossiers::remplirListDossiers()
     }
     //trie la liste
     ui->listWidgetDossiers->sortItems();
+}
+
+void DialogConsulterDossiers::on_pushButton_clicked()
+{
+    reject();
 }

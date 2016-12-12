@@ -26,6 +26,8 @@ private slots:
     void remplirListDossiers();
     void chargeInfosDossier(QString monid);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::DialogConsulterDossiers *ui;
     QVector<DossierDemenagement> vectDossiers;
