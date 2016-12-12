@@ -20,6 +20,8 @@ private slots:
 
     void on_pushButtonRefuser_clicked();
 
+    void on_tableWidgetAbsence_cellClicked(int row, int column);
+
 private:
     Ui::DialogAbsence *ui;
     void chargerLesAbsences();
