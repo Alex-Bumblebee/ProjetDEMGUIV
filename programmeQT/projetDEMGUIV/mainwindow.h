@@ -28,6 +28,8 @@ private slots:
 
     void on_pushButtonModifierDossier_clicked();
 
+    void on_pushButtonConsultDossier_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

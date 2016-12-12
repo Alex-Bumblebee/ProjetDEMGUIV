@@ -14,6 +14,8 @@ class DialogAccesLogiciel : public QDialog
 public:
     explicit DialogAccesLogiciel(QWidget *parent = 0);
     ~DialogAccesLogiciel();
+    QString getLogin();
+    QString getMdp();
     
 private:
     Ui::DialogAccesLogiciel *ui;
