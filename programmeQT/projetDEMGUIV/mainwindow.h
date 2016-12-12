@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButtonCreerDossier_clicked();
 
+    void on_pushButtonModifierDossier_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
