@@ -2,6 +2,8 @@
 #include <QApplication>
 #include <QtSql/QSqlDatabase>
 #include <dialogacceslogiciel.h>
+#include <QSqlQuery>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -12,17 +14,39 @@ int main(int argc, char *argv[])
     maBase.setPassword("Zmcub03");
     maBase.setDatabaseName("Demenagement");
     if(maBase.open())
-    {
-        DialogAccesLogiciel boiteDeCo;
-        if(boiteDeCo.exec()==QDialog::Accepted)
-        {
-            MainWindow w;
-             w.show();
-            return a.exec();
-        }
+    {        
 
-    }
+            DialogAccesLogiciel boiteDeCo;
+            bool ok = false;
+            int resultat;
+            do
+            {
+                resultat = boiteDeCo.exec();
+                qDebug()<<resultat<<endl;
+                QString login = boiteDeCo.getLogin();
+                QString mdp = boiteDeCo.getMdp();
+                QString texteReq="SELECT * FROM User WHERE login = '"+login+"'and mdp = '"+mdp+"'";
+                qDebug()<<texteReq;
+                QSqlQuery reqConnexion(texteReq);
+                if(reqConnexion.numRowsAffected()==1)
+                {
+                    ok=true;
+                }
 
-    return a.exec();
+            }//fin de boucle
+            while(!(ok || resultat == 0));
+            if(ok)
+            {
+                MainWindow w;
+                w.show();
+                return a.exec();
+            }
+            else
+            {
+                return 0;
+            }
+     }
 }
-//return main
+
+
+
