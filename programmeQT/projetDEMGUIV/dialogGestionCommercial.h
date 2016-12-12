@@ -16,6 +16,10 @@ public:
     ~DialogGestionCommercial();
     void chargeLesVehiculesDispo();
     void chargeLesDemenageursDispo();
+private slots:
+
+    void on_buttonBox_accepted();
+
 private:
     Ui::DialogGestionCommercial *ui;
 };
