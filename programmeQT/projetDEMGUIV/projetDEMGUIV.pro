@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     dialogCreerAgence.cpp \
     dialogGestionCommercial.cpp \
     dialoggestionmodifier.cpp \
-    dialogabsence.cpp
+    dialogabsence.cpp \
+    dialogConsulterDossiers.cpp
     
 
 
@@ -53,7 +54,8 @@ HEADERS  += mainwindow.h \
     dialogCreerAgence.h \
     dialogGestionCommercial.h \
     dialoggestionmodifier.h \
-    dialogabsence.h
+    dialogabsence.h \
+    dialogConsulterDossiers.h
     
 
 FORMS    += mainwindow.ui \
@@ -65,7 +67,8 @@ FORMS    += mainwindow.ui \
     dialogGestionCommercial.ui \
     dialogGestionCommercial.ui \
     dialoggestionmodifier.ui \
-    dialogabsence.ui
+    dialogabsence.ui \
+    dialogConsulterDossiers.ui
     
 
 
