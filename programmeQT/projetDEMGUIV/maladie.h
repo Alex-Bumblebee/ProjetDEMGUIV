@@ -3,8 +3,8 @@
 #define MALADIE_H
 #include "absence.h"
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 using namespace std;
 
 
@@ -20,7 +20,7 @@ class Maladie : public Absence
 private:
 
   int malId;
-  string malLibelle;
+  QString malLibelle;
   bool malCertificatFourni;
 
   void initAttributes ( ) ;
@@ -53,13 +53,13 @@ public:
    * Set the value of malLibelle
    * @param new_var the new value of malLibelle
    */
-  void setMalLibelle ( string new_var );
+  void setMalLibelle ( QString new_var );
 
   /**
    * Get the value of malLibelle
    * @return the value of malLibelle
    */
-  string getMalLibelle ( );
+  QString getMalLibelle ( );
 
   /**
    * Set the value of malCertificatFourni

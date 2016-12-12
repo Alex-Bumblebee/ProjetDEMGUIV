@@ -6,6 +6,17 @@ DossierDemenagement::DossierDemenagement ( ) {
 	initAttributes();
 }
 
+DossierDemenagement::DossierDemenagement(int monId, QString dateDebut, QString dateFin, int volume, QString adresseChargement, QString adresseLivraison)
+{
+    dosNumero=monId;
+    dosDateDebutDem=dateDebut;
+    dosDateFinDem=dateFin;
+    dosVolume=volume;
+    dosAdresseChargement=adresseChargement;
+    dosAdresseLivraison=adresseLivraison;
+}
+
+
 DossierDemenagement::~DossierDemenagement ( ) { }
 
 
@@ -22,27 +33,27 @@ int DossierDemenagement::getDosNumero ( )   {
 	return dosNumero;
 }
 
-void DossierDemenagement::setDosDateOuverture ( string new_var )   {
+void DossierDemenagement::setDosDateOuverture ( QString new_var )   {
 	dosDateOuverture = new_var;
 }
 
-string DossierDemenagement::getDosDateOuverture ( )   {
+QString DossierDemenagement::getDosDateOuverture ( )   {
 	return dosDateOuverture;
 }
 
-void DossierDemenagement::setDosDateDebutDem ( string new_var )   {
+void DossierDemenagement::setDosDateDebutDem ( QString new_var )   {
 	dosDateDebutDem = new_var;
 }
 
-string DossierDemenagement::getDosDateDebutDem ( )   {
+QString DossierDemenagement::getDosDateDebutDem ( )   {
 	return dosDateDebutDem;
 }
 
-void DossierDemenagement::setDosDateFinDem ( string new_var )   {
+void DossierDemenagement::setDosDateFinDem ( QString new_var )   {
 	dosDateFinDem = new_var;
 }
 
-string DossierDemenagement::getDosDateFinDem ( )   {
+QString DossierDemenagement::getDosDateFinDem ( )   {
 	return dosDateFinDem;
 }
 
@@ -62,27 +73,27 @@ float DossierDemenagement::getDosNbKm ( )   {
 	return dosNbKm;
 }
 
-void DossierDemenagement::setDosAdresseChargement ( string new_var )   {
+void DossierDemenagement::setDosAdresseChargement ( QString new_var )   {
 	dosAdresseChargement = new_var;
 }
 
-string DossierDemenagement::getDosAdresseChargement ( )   {
+QString DossierDemenagement::getDosAdresseChargement ( )   {
 	return dosAdresseChargement;
 }
 
-void DossierDemenagement::setDosAdresseLivraison ( string new_var )   {
+void DossierDemenagement::setDosAdresseLivraison ( QString new_var )   {
 	dosAdresseLivraison = new_var;
 }
 
-string DossierDemenagement::getDosAdresseLivraison ( )   {
+QString DossierDemenagement::getDosAdresseLivraison ( )   {
 	return dosAdresseLivraison;
 }
 
-void DossierDemenagement::setDosEtatDossier ( string new_var )   {
+void DossierDemenagement::setDosEtatDossier ( QString new_var )   {
 	dosEtatDossier = new_var;
 }
 
-string DossierDemenagement::getDosEtatDossier ( )   {
+QString DossierDemenagement::getDosEtatDossier ( )   {
 	return dosEtatDossier;
 }
 
@@ -94,19 +105,19 @@ int DossierDemenagement::getDosNbDemenageur ( )   {
 	return dosNbDemenageur;
 }
 
-void DossierDemenagement::setDosDateCloture ( string new_var )   {
+void DossierDemenagement::setDosDateCloture ( QString new_var )   {
 	dosDateCloture = new_var;
 }
 
-string DossierDemenagement::getDosDateCloture ( )   {
+QString DossierDemenagement::getDosDateCloture ( )   {
 	return dosDateCloture;
 }
 
-void DossierDemenagement::setVectDemenageurs ( vector<Demenageur*> new_var )   {
+void DossierDemenagement::setVectDemenageurs ( QVector<Demenageur*> new_var )   {
 	vectDemenageurs = new_var;
 }
 
-vector<Demenageur*> DossierDemenagement::getVectDemenageurs ( )   {
+QVector<Demenageur*> DossierDemenagement::getVectDemenageurs ( )   {
 	return vectDemenageurs;
 }
 
@@ -126,11 +137,11 @@ Commercial* DossierDemenagement::getDosCommercial ( )   {
 	return dosCommercial;
 }
 
-void DossierDemenagement::setVectVehicule ( vector<Vehicule*> new_var )   {
+void DossierDemenagement::setVectVehicule ( QVector<Vehicule*> new_var )   {
 	vectVehicule = new_var;
 }
 
-vector<Vehicule*> DossierDemenagement::getVectVehicule ( )   {
+QVector<Vehicule*> DossierDemenagement::getVectVehicule ( )   {
 	return vectVehicule;
 }
 

@@ -3,8 +3,8 @@
 #define DEMENAGEUR_H
 #include "salarie.h"
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 using namespace std;
 
 
@@ -18,7 +18,7 @@ class Demenageur : public Salarie
 {
 private:
 
-  string demPermis;
+  QString demPermis;
   bool demChef;
 
   void initAttributes ( ) ;
@@ -39,13 +39,13 @@ public:
    * Set the value of demPermis
    * @param new_var the new value of demPermis
    */
-  void setDemPermis ( string new_var );
+  void setDemPermis ( QString new_var );
 
   /**
    * Get the value of demPermis
    * @return the value of demPermis
    */
-  string getDemPermis ( );
+  QString getDemPermis ( );
 
   /**
    * Set the value of demChef

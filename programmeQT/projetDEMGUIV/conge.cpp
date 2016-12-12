@@ -23,35 +23,35 @@ int Conge::getConId ( )   {
 	return conId;
 }
 
-void Conge::setConDateDemande ( string new_var )   {
+void Conge::setConDateDemande ( QString new_var )   {
 	conDateDemande = new_var;
 }
 
-string Conge::getConDateDemande ( )   {
+QString Conge::getConDateDemande ( )   {
 	return conDateDemande;
 }
 
-void Conge::setConEtatDemande ( string new_var )   {
+void Conge::setConEtatDemande ( QString new_var )   {
 	conEtatDemande = new_var;
 }
 
-string Conge::getConEtatDemande ( )   {
+QString Conge::getConEtatDemande ( )   {
 	return conEtatDemande;
 }
 
-void Conge::setConDateReponse ( string new_var )   {
+void Conge::setConDateReponse ( QString new_var )   {
 	conDateReponse = new_var;
 }
 
-string Conge::getConDateReponse ( )   {
+QString Conge::getConDateReponse ( )   {
 	return conDateReponse;
 }
 
-void Conge::setConLibelle ( string new_var )   {
+void Conge::setConLibelle ( QString new_var )   {
 	conLibelle = new_var;
 }
 
-string Conge::getConLibelle ( )   {
+QString Conge::getConLibelle ( )   {
 	return conLibelle;
 }
 

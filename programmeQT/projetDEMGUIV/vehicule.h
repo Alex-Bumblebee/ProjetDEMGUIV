@@ -2,8 +2,8 @@
 #ifndef VEHICULE_H
 #define VEHICULE_H
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 #include "agence.h"
 #include "ficheDeSuivi.h"
 using namespace std;
@@ -21,17 +21,17 @@ class Vehicule
 private:
 
   int vehId;
-  string vehImmat;
-  string vehDateMiseCirculation;
+  QString vehImmat;
+  QString vehDateMiseCirculation;
   float vehVolumeUtile;
   bool vehHayon;
   bool vehCouchette;
   int vehNbPlaceCabine;
-  string vehType;
-  string vehPTAC;
+  QString vehType;
+  QString vehPTAC;
   int vehFreqEntretien;
   Agence* vehAgence;
-  vector<FicheDeSuivi*> vectFicheDeSuivi;
+  QVector<FicheDeSuivi*> vectFicheDeSuivi;
 
   void initAttributes ( ) ;
 
@@ -63,25 +63,25 @@ public:
    * Set the value of vehImmat
    * @param new_var the new value of vehImmat
    */
-  void setVehImmat ( string new_var );
+  void setVehImmat ( QString new_var );
 
   /**
    * Get the value of vehImmat
    * @return the value of vehImmat
    */
-  string getVehImmat ( );
+  QString getVehImmat ( );
 
   /**
    * Set the value of vehDateMiseCirculation
    * @param new_var the new value of vehDateMiseCirculation
    */
-  void setVehDateMiseCirculation ( string new_var );
+  void setVehDateMiseCirculation ( QString new_var );
 
   /**
    * Get the value of vehDateMiseCirculation
    * @return the value of vehDateMiseCirculation
    */
-  string getVehDateMiseCirculation ( );
+  QString getVehDateMiseCirculation ( );
 
   /**
    * Set the value of vehVolumeUtile
@@ -135,25 +135,25 @@ public:
    * Set the value of vehType
    * @param new_var the new value of vehType
    */
-  void setVehType ( string new_var );
+  void setVehType ( QString new_var );
 
   /**
    * Get the value of vehType
    * @return the value of vehType
    */
-  string getVehType ( );
+  QString getVehType ( );
 
   /**
    * Set the value of vehPTAC
    * @param new_var the new value of vehPTAC
    */
-  void setVehPTAC ( string new_var );
+  void setVehPTAC ( QString new_var );
 
   /**
    * Get the value of vehPTAC
    * @return the value of vehPTAC
    */
-  string getVehPTAC ( );
+  QString getVehPTAC ( );
 
   /**
    * Set the value of vehFreqEntretien
@@ -183,13 +183,13 @@ public:
    * Set the value of vectFicheDeSuivi
    * @param new_var the new value of vectFicheDeSuivi
    */
-  void setVectFicheDeSuivi ( vector<FicheDeSuivi*> new_var );
+  void setVectFicheDeSuivi ( QVector<FicheDeSuivi*> new_var );
 
   /**
    * Get the value of vectFicheDeSuivi
    * @return the value of vectFicheDeSuivi
    */
-  vector<FicheDeSuivi*> getVectFicheDeSuivi ( );
+  QVector<FicheDeSuivi*> getVectFicheDeSuivi ( );
 
 };
 

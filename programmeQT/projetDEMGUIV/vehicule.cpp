@@ -22,19 +22,19 @@ int Vehicule::getVehId ( )   {
 	return vehId;
 }
 
-void Vehicule::setVehImmat ( string new_var )   {
+void Vehicule::setVehImmat ( QString new_var )   {
 	vehImmat = new_var;
 }
 
-string Vehicule::getVehImmat ( )   {
+QString Vehicule::getVehImmat ( )   {
 	return vehImmat;
 }
 
-void Vehicule::setVehDateMiseCirculation ( string new_var )   {
+void Vehicule::setVehDateMiseCirculation ( QString new_var )   {
 	vehDateMiseCirculation = new_var;
 }
 
-string Vehicule::getVehDateMiseCirculation ( )   {
+QString Vehicule::getVehDateMiseCirculation ( )   {
 	return vehDateMiseCirculation;
 }
 
@@ -70,19 +70,19 @@ int Vehicule::getVehNbPlaceCabine ( )   {
 	return vehNbPlaceCabine;
 }
 
-void Vehicule::setVehType ( string new_var )   {
+void Vehicule::setVehType ( QString new_var )   {
 	vehType = new_var;
 }
 
-string Vehicule::getVehType ( )   {
+QString Vehicule::getVehType ( )   {
 	return vehType;
 }
 
-void Vehicule::setVehPTAC ( string new_var )   {
+void Vehicule::setVehPTAC ( QString new_var )   {
 	vehPTAC = new_var;
 }
 
-string Vehicule::getVehPTAC ( )   {
+QString Vehicule::getVehPTAC ( )   {
 	return vehPTAC;
 }
 
@@ -102,11 +102,11 @@ Agence* Vehicule::getVehAgence ( )   {
 	return vehAgence;
 }
 
-void Vehicule::setVectFicheDeSuivi ( vector<FicheDeSuivi*> new_var )   {
+void Vehicule::setVectFicheDeSuivi ( QVector<FicheDeSuivi*> new_var )   {
 	vectFicheDeSuivi = new_var;
 }
 
-vector<FicheDeSuivi*> Vehicule::getVectFicheDeSuivi ( )   {
+QVector<FicheDeSuivi*> Vehicule::getVectFicheDeSuivi ( )   {
 	return vectFicheDeSuivi;
 }
 

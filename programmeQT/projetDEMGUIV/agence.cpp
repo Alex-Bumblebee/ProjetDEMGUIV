@@ -22,59 +22,59 @@ int Agence::getAgeId ( )   {
 	return ageId;
 }
 
-void Agence::setAgeNom ( string new_var )   {
+void Agence::setAgeNom ( QString new_var )   {
 	ageNom = new_var;
 }
 
-string Agence::getAgeNom ( )   {
+QString Agence::getAgeNom ( )   {
 	return ageNom;
 }
 
-void Agence::setAgeAdresse ( string new_var )   {
+void Agence::setAgeAdresse ( QString new_var )   {
 	ageAdresse = new_var;
 }
 
-string Agence::getAgeAdresse ( )   {
+QString Agence::getAgeAdresse ( )   {
 	return ageAdresse;
 }
 
-void Agence::setAgeTelephone ( string new_var )   {
+void Agence::setAgeTelephone ( QString new_var )   {
 	ageTelephone = new_var;
 }
 
-string Agence::getAgeTelephone ( )   {
+QString Agence::getAgeTelephone ( )   {
 	return ageTelephone;
 }
 
-void Agence::setAgeFax ( string new_var )   {
+void Agence::setAgeFax ( QString new_var )   {
 	ageFax = new_var;
 }
 
-string Agence::getAgeFax ( )   {
+QString Agence::getAgeFax ( )   {
 	return ageFax;
 }
 
-void Agence::setAgeMail ( string new_var )   {
+void Agence::setAgeMail ( QString new_var )   {
 	ageMail = new_var;
 }
 
-string Agence::getAgeMail ( )   {
+QString Agence::getAgeMail ( )   {
 	return ageMail;
 }
 
-void Agence::setVectVehicule ( vector<Vehicule*> new_var )   {
+void Agence::setVectVehicule ( QVector<Vehicule*> new_var )   {
 	vectVehicule = new_var;
 }
 
-vector<Vehicule*> Agence::getVectVehicule ( )   {
+QVector<Vehicule*> Agence::getVectVehicule ( )   {
 	return vectVehicule;
 }
 
-void Agence::setVectSalarie ( vector<Salarie*> new_var )   {
+void Agence::setVectSalarie ( QVector<Salarie*> new_var )   {
 	vectSalarie = new_var;
 }
 
-vector<Salarie*> Agence::getVectSalarie ( )   {
+QVector<Salarie*> Agence::getVectSalarie ( )   {
 	return vectSalarie;
 }
 
