@@ -5,6 +5,7 @@
 #include "dialogCreerAgence.h"
 #include "dialogGestionCommercial.h"
 #include "dialoggestionmodifier.h"
+#include "dialogConsulterDossiers.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -53,4 +54,10 @@ void MainWindow::on_pushButtonModifierDossier_clicked()
 {
     DialogGestionModifier diagGestionModifier;
     diagGestionModifier.exec();
+}
+
+void MainWindow::on_pushButtonConsultDossier_clicked()
+{
+    DialogConsulterDossiers diagConsulterDossiers;
+    diagConsulterDossiers.exec();
 }
