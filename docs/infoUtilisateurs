@@ -1,28 +1,52 @@
 Tous :
-	Demander/signaler une absence
+	Demander/signaler une absence 
 
 Commercial :
-	Voir la disponibilité des déménageurs
-	Voir la disponibilité des véhicules
 	Créer un dossier
-	Affecter un déménageur et un chef d'équipe à un dossier
-	Affecter un vehicule à un dossier
-	Affecter un déménageur à un véhicule sur un dossier
+		(Voir la disponibilité des déménageurs
+		Voir la disponibilité des véhicules)
+	
+Chef d'exploitation :
+	
+	Modifier un dossier
+		Selection du dossier a modifier
+			(Voir la disponibilité des déménageurs
+			Voir la disponibilité des véhicules)
+			Affecter un déménageur et un chef d'équipe à un dossier
+			Affecter un vehicule à un dossier
+			Affecter un déménageur à un véhicule sur un dossier
 
 Déménageur :
-	Conculter les dossier sur lesquelles il est affecté
-	Consulter ses disponibilités
+	Consulter mes dossiers 
+		Selection du dossier a affecté
+	Consulter ses disponibilités (calendrier avec code couleur : maladie, congés, demenagement)
 
 Chef d'équipe :
 	Droits déménageur
-	Valider un dossier
+	Consulter mes dossiers
+		Selection dossier
+			Demande de modification de dossier
+			Valider le dossier
+			Classer le dossier
 
 Directeur ressources :
 	Gérer les demandes d'absences
+		Selection des abscences non traitées (tableau demandeur)
 	Gérer la maintenance des véhicules
-	Voir la disponibilité des déménageurs et des véhicules
-	Créer modifier et supprimer un véhicule ou un salarié
+		Selection du vehicule
+			Menu de disponibilité (calendrier)
+	Gestion salariés
+	Gestion vehicules
 	
 patron :
 	Tous les droits
 	Créer une agence
+
+
+	 
+roles : fred : menu principal et demenageurs
+	rob : commercial
+	antho : chef d'equipe
+	rv : chef d'exploitation
+	tibo : patron
+	ben : directeur ressources
