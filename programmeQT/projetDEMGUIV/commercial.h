@@ -3,8 +3,8 @@
 #define COMMERCIAL_H
 #include "salarie.h"
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 using namespace std;
 
 

@@ -22,43 +22,43 @@ int Salarie::getSalId ( )   {
 	return salId;
 }
 
-void Salarie::setSalNom ( string new_var )   {
+void Salarie::setSalNom ( QString new_var )   {
 	salNom = new_var;
 }
 
-string Salarie::getSalNom ( )   {
+QString Salarie::getSalNom ( )   {
 	return salNom;
 }
 
-void Salarie::setSalPrenom ( string new_var )   {
+void Salarie::setSalPrenom ( QString new_var )   {
 	salPrenom = new_var;
 }
 
-string Salarie::getSalPrenom ( )   {
+QString Salarie::getSalPrenom ( )   {
 	return salPrenom;
 }
 
-void Salarie::setSalDateNaissance ( string new_var )   {
+void Salarie::setSalDateNaissance ( QString new_var )   {
 	salDateNaissance = new_var;
 }
 
-string Salarie::getSalDateNaissance ( )   {
+QString Salarie::getSalDateNaissance ( )   {
 	return salDateNaissance;
 }
 
-void Salarie::setSalDateEmbauche ( string new_var )   {
+void Salarie::setSalDateEmbauche ( QString new_var )   {
 	salDateEmbauche = new_var;
 }
 
-string Salarie::getSalDateEmbauche ( )   {
+QString Salarie::getSalDateEmbauche ( )   {
 	return salDateEmbauche;
 }
 
-void Salarie::setSalAdresse ( string new_var )   {
+void Salarie::setSalAdresse ( QString new_var )   {
 	salAdresse = new_var;
 }
 
-string Salarie::getSalAdresse ( )   {
+QString Salarie::getSalAdresse ( )   {
 	return salAdresse;
 }
 
@@ -70,11 +70,11 @@ Agence* Salarie::getSalAgence ( )   {
 	return salAgence;
 }
 
-void Salarie::setVectAbsence ( vector<Absence*> new_var )   {
+void Salarie::setVectAbsence ( QVector<Absence*> new_var )   {
 	vectAbsence = new_var;
 }
 
-vector<Absence*> Salarie::getVectAbsence ( )   {
+QVector<Absence*> Salarie::getVectAbsence ( )   {
 	return vectAbsence;
 }
 

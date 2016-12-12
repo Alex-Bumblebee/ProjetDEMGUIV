@@ -22,19 +22,19 @@ int Absence::getAbsId ( )   {
 	return absId;
 }
 
-void Absence::setAbsDateDebut ( string new_var )   {
+void Absence::setAbsDateDebut ( QString new_var )   {
 	absDateDebut = new_var;
 }
 
-string Absence::getAbsDateDebut ( )   {
+QString Absence::getAbsDateDebut ( )   {
 	return absDateDebut;
 }
 
-void Absence::setAbsDateFin ( string new_var )   {
+void Absence::setAbsDateFin ( QString new_var )   {
 	absDateFin = new_var;
 }
 
-string Absence::getAbsDateFin ( )   {
+QString Absence::getAbsDateFin ( )   {
 	return absDateFin;
 }
 

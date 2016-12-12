@@ -2,8 +2,8 @@
 #ifndef ABSENCE_H
 #define ABSENCE_H
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 #include "salarie.h"
 using namespace std;
 class Salarie;
@@ -18,8 +18,8 @@ class Absence
 private:
 
   int absId;
-  string absDateDebut;
-  string absDateFin;
+  QString absDateDebut;
+  QString absDateFin;
   Salarie* absSalarie;
 
   void initAttributes ( ) ;
@@ -52,25 +52,25 @@ public:
    * Set the value of absDateDebut
    * @param new_var the new value of absDateDebut
    */
-  void setAbsDateDebut ( string new_var );
+  void setAbsDateDebut ( QString new_var );
 
   /**
    * Get the value of absDateDebut
    * @return the value of absDateDebut
    */
-  string getAbsDateDebut ( );
+  QString getAbsDateDebut ( );
 
   /**
    * Set the value of absDateFin
    * @param new_var the new value of absDateFin
    */
-  void setAbsDateFin ( string new_var );
+  void setAbsDateFin ( QString new_var );
 
   /**
    * Get the value of absDateFin
    * @return the value of absDateFin
    */
-  string getAbsDateFin ( );
+  QString getAbsDateFin ( );
 
   /**
    * Set the value of absSalarie

@@ -1,7 +1,7 @@
 #ifndef FICHEDESUIVI_H
 #define FICHEDESUIVI_H
 
-#include <string>
+#include <QString>
 #include "vehicule.h"
 class Vehicule;
 using namespace std;
@@ -16,11 +16,11 @@ class FicheDeSuivi
 private:
 
   int fdsId;
-  string fdsType;
+  QString fdsType;
   int fdsKilometrage;
-  string fdsDateDebut;
-  string fdsDateFin;
-  string fdsInformationsSup;
+  QString fdsDateDebut;
+  QString fdsDateFin;
+  QString fdsInformationsSup;
   Vehicule* fdsVehicule;
 
   void initAttributes ( ) ;
@@ -53,13 +53,13 @@ public:
    * Set the value of fdsType
    * @param new_var the new value of fdsType
    */
-  void setFdsType ( string new_var );
+  void setFdsType ( QString new_var );
 
   /**
    * Get the value of fdsType
    * @return the value of fdsType
    */
-  string getFdsType ( );
+  QString getFdsType ( );
 
   /**
    * Set the value of fdsKilometrage
@@ -77,37 +77,37 @@ public:
    * Set the value of fdsDateDebut
    * @param new_var the new value of fdsDateDebut
    */
-  void setFdsDateDebut ( string new_var );
+  void setFdsDateDebut ( QString new_var );
 
   /**
    * Get the value of fdsDateDebut
    * @return the value of fdsDateDebut
    */
-  string getFdsDateDebut ( );
+  QString getFdsDateDebut ( );
 
   /**
    * Set the value of fdsDateFin
    * @param new_var the new value of fdsDateFin
    */
-  void setFdsDateFin ( string new_var );
+  void setFdsDateFin ( QString new_var );
 
   /**
    * Get the value of fdsDateFin
    * @return the value of fdsDateFin
    */
-  string getFdsDateFin ( );
+  QString getFdsDateFin ( );
 
   /**
    * Set the value of fdsInformationsSup
    * @param new_var the new value of fdsInformationsSup
    */
-  void setFdsInformationsSup ( string new_var );
+  void setFdsInformationsSup ( QString new_var );
 
   /**
    * Get the value of fdsInformationsSup
    * @return the value of fdsInformationsSup
    */
-  string getFdsInformationsSup ( );
+  QString getFdsInformationsSup ( );
 
   /**
    * Set the value of fdsVehicule

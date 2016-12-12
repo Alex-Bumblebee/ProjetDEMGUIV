@@ -22,11 +22,11 @@ int Maladie::getMalId ( )   {
 	return malId;
 }
 
-void Maladie::setMalLibelle ( string new_var )   {
+void Maladie::setMalLibelle ( QString new_var )   {
 	malLibelle = new_var;
 }
 
-string Maladie::getMalLibelle ( )   {
+QString Maladie::getMalLibelle ( )   {
 	return malLibelle;
 }
 

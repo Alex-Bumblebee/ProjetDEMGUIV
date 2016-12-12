@@ -2,8 +2,8 @@
 #ifndef AGENCE_H
 #define AGENCE_H
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 #include "vehicule.h"
 #include "salarie.h"
 using namespace std;
@@ -25,13 +25,13 @@ class Agence
 private:
 
   int ageId;
-  string ageNom;
-  string ageAdresse;
-  string ageTelephone;
-  string ageFax;
-  string ageMail;
-  vector<Vehicule*> vectVehicule;
-  vector<Salarie*> vectSalarie;
+  QString ageNom;
+  QString ageAdresse;
+  QString ageTelephone;
+  QString ageFax;
+  QString ageMail;
+  QVector<Vehicule*> vectVehicule;
+  QVector<Salarie*> vectSalarie;
 
   void initAttributes ( ) ;
 
@@ -63,85 +63,85 @@ public:
    * Set the value of ageNom
    * @param new_var the new value of ageNom
    */
-  void setAgeNom ( string new_var );
+  void setAgeNom ( QString new_var );
 
   /**
    * Get the value of ageNom
    * @return the value of ageNom
    */
-  string getAgeNom ( );
+  QString getAgeNom ( );
 
   /**
    * Set the value of ageAdresse
    * @param new_var the new value of ageAdresse
    */
-  void setAgeAdresse ( string new_var );
+  void setAgeAdresse ( QString new_var );
 
   /**
    * Get the value of ageAdresse
    * @return the value of ageAdresse
    */
-  string getAgeAdresse ( );
+  QString getAgeAdresse ( );
 
   /**
    * Set the value of ageTelephone
    * @param new_var the new value of ageTelephone
    */
-  void setAgeTelephone ( string new_var );
+  void setAgeTelephone ( QString new_var );
 
   /**
    * Get the value of ageTelephone
    * @return the value of ageTelephone
    */
-  string getAgeTelephone ( );
+  QString getAgeTelephone ( );
 
   /**
    * Set the value of ageFax
    * @param new_var the new value of ageFax
    */
-  void setAgeFax ( string new_var );
+  void setAgeFax ( QString new_var );
 
   /**
    * Get the value of ageFax
    * @return the value of ageFax
    */
-  string getAgeFax ( );
+  QString getAgeFax ( );
 
   /**
    * Set the value of ageMail
    * @param new_var the new value of ageMail
    */
-  void setAgeMail ( string new_var );
+  void setAgeMail ( QString new_var );
 
   /**
    * Get the value of ageMail
    * @return the value of ageMail
    */
-  string getAgeMail ( );
+  QString getAgeMail ( );
 
   /**
    * Set the value of vectVehicule
    * @param new_var the new value of vectVehicule
    */
-  void setVectVehicule ( vector<Vehicule*> new_var );
+  void setVectVehicule ( QVector<Vehicule*> new_var );
 
   /**
    * Get the value of vectVehicule
    * @return the value of vectVehicule
    */
-  vector<Vehicule*> getVectVehicule ( );
+  QVector<Vehicule*> getVectVehicule ( );
 
   /**
    * Set the value of vectSalarie
    * @param new_var the new value of vectSalarie
    */
-  void setVectSalarie ( vector<Salarie*> new_var );
+  void setVectSalarie ( QVector<Salarie*> new_var );
 
   /**
    * Get the value of vectSalarie
    * @return the value of vectSalarie
    */
-  vector<Salarie*> getVectSalarie ( );
+  QVector<Salarie*> getVectSalarie ( );
 
 };
 

@@ -22,11 +22,11 @@ int FicheDeSuivi::getFdsId ( )   {
 	return fdsId;
 }
 
-void FicheDeSuivi::setFdsType ( string new_var )   {
+void FicheDeSuivi::setFdsType ( QString new_var )   {
 	fdsType = new_var;
 }
 
-string FicheDeSuivi::getFdsType ( )   {
+QString FicheDeSuivi::getFdsType ( )   {
 	return fdsType;
 }
 
@@ -38,27 +38,27 @@ int FicheDeSuivi::getFdsKilometrage ( )   {
 	return fdsKilometrage;
 }
 
-void FicheDeSuivi::setFdsDateDebut ( string new_var )   {
+void FicheDeSuivi::setFdsDateDebut ( QString new_var )   {
 	fdsDateDebut = new_var;
 }
 
-string FicheDeSuivi::getFdsDateDebut ( )   {
+QString FicheDeSuivi::getFdsDateDebut ( )   {
 	return fdsDateDebut;
 }
 
-void FicheDeSuivi::setFdsDateFin ( string new_var )   {
+void FicheDeSuivi::setFdsDateFin ( QString new_var )   {
 	fdsDateFin = new_var;
 }
 
-string FicheDeSuivi::getFdsDateFin ( )   {
+QString FicheDeSuivi::getFdsDateFin ( )   {
 	return fdsDateFin;
 }
 
-void FicheDeSuivi::setFdsInformationsSup ( string new_var )   {
+void FicheDeSuivi::setFdsInformationsSup ( QString new_var )   {
 	fdsInformationsSup = new_var;
 }
 
-string FicheDeSuivi::getFdsInformationsSup ( )   {
+QString FicheDeSuivi::getFdsInformationsSup ( )   {
 	return fdsInformationsSup;
 }
 

@@ -14,11 +14,11 @@ Demenageur::~Demenageur ( ) { }
 void Demenageur::initAttributes ( ) {
 }
 
-void Demenageur::setDemPermis ( string new_var )   {
+void Demenageur::setDemPermis ( QString new_var )   {
 	demPermis = new_var;
 }
 
-string Demenageur::getDemPermis ( )   {
+QString Demenageur::getDemPermis ( )   {
 	return demPermis;
 }
 

@@ -2,8 +2,8 @@
 #ifndef DOSSIERDEMENAGEMENT_H
 #define DOSSIERDEMENAGEMENT_H
 
-#include <string>
-#include <vector>
+#include <QString>
+#include <QVector>
 #include "demenageur.h"
 #include "commercial.h"
 #include "vehicule.h"
@@ -21,29 +21,30 @@ class DossierDemenagement
 private:
 
   int dosNumero;
-  string dosDateOuverture;
-  string dosDateDebutDem;
-  string dosDateFinDem;
+  QString dosDateOuverture;
+  QString dosDateDebutDem;
+  QString dosDateFinDem;
   float dosVolume;
   float dosNbKm;
-  string dosAdresseChargement;
-  string dosAdresseLivraison;
-  string dosEtatDossier;
+  QString dosAdresseChargement;
+  QString dosAdresseLivraison;
+  QString dosEtatDossier;
   int dosNbDemenageur;
-  string dosDateCloture;
-  vector<Demenageur*> vectDemenageurs;
+  QString dosDateCloture;
+  QVector<Demenageur*> vectDemenageurs;
   Demenageur* dosChefEquipe;
   Commercial* dosCommercial;
-  vector<Vehicule*> vectVehicule;
+  QVector<Vehicule*> vectVehicule;
 
   void initAttributes ( ) ;
 
 public:
 
   /**
-   * Empty Constructor
+   * Constructors
    */
   DossierDemenagement ( );
+  DossierDemenagement(int monId, QString dateDebut, QString dateFin, int volume, QString adresseChargement, QString adresseLivraison);
 
   /**
    * Empty Destructor
@@ -66,37 +67,37 @@ public:
    * Set the value of dosDateOuverture
    * @param new_var the new value of dosDateOuverture
    */
-  void setDosDateOuverture ( string new_var );
+  void setDosDateOuverture ( QString new_var );
 
   /**
    * Get the value of dosDateOuverture
    * @return the value of dosDateOuverture
    */
-  string getDosDateOuverture ( );
+  QString getDosDateOuverture ( );
 
   /**
    * Set the value of dosDateDebutDem
    * @param new_var the new value of dosDateDebutDem
    */
-  void setDosDateDebutDem ( string new_var );
+  void setDosDateDebutDem ( QString new_var );
 
   /**
    * Get the value of dosDateDebutDem
    * @return the value of dosDateDebutDem
    */
-  string getDosDateDebutDem ( );
+  QString getDosDateDebutDem ( );
 
   /**
    * Set the value of dosDateFinDem
    * @param new_var the new value of dosDateFinDem
    */
-  void setDosDateFinDem ( string new_var );
+  void setDosDateFinDem ( QString new_var );
 
   /**
    * Get the value of dosDateFinDem
    * @return the value of dosDateFinDem
    */
-  string getDosDateFinDem ( );
+  QString getDosDateFinDem ( );
 
   /**
    * Set the value of dosVolume
@@ -126,37 +127,37 @@ public:
    * Set the value of dosAdresseChargement
    * @param new_var the new value of dosAdresseChargement
    */
-  void setDosAdresseChargement ( string new_var );
+  void setDosAdresseChargement ( QString new_var );
 
   /**
    * Get the value of dosAdresseChargement
    * @return the value of dosAdresseChargement
    */
-  string getDosAdresseChargement ( );
+  QString getDosAdresseChargement ( );
 
   /**
    * Set the value of dosAdresseLivraison
    * @param new_var the new value of dosAdresseLivraison
    */
-  void setDosAdresseLivraison ( string new_var );
+  void setDosAdresseLivraison ( QString new_var );
 
   /**
    * Get the value of dosAdresseLivraison
    * @return the value of dosAdresseLivraison
    */
-  string getDosAdresseLivraison ( );
+  QString getDosAdresseLivraison ( );
 
   /**
    * Set the value of dosEtatDossier
    * @param new_var the new value of dosEtatDossier
    */
-  void setDosEtatDossier ( string new_var );
+  void setDosEtatDossier ( QString new_var );
 
   /**
    * Get the value of dosEtatDossier
    * @return the value of dosEtatDossier
    */
-  string getDosEtatDossier ( );
+  QString getDosEtatDossier ( );
 
   /**
    * Set the value of dosNbDemenageur
@@ -174,25 +175,25 @@ public:
    * Set the value of dosDateCloture
    * @param new_var the new value of dosDateCloture
    */
-  void setDosDateCloture ( string new_var );
+  void setDosDateCloture ( QString new_var );
 
   /**
    * Get the value of dosDateCloture
    * @return the value of dosDateCloture
    */
-  string getDosDateCloture ( );
+  QString getDosDateCloture ( );
 
   /**
    * Set the value of vectDemenageurs
    * @param new_var the new value of vectDemenageurs
    */
-  void setVectDemenageurs ( vector<Demenageur*> new_var );
+  void setVectDemenageurs ( QVector<Demenageur*> new_var );
 
   /**
    * Get the value of vectDemenageurs
    * @return the value of vectDemenageurs
    */
-  vector<Demenageur*> getVectDemenageurs ( );
+  QVector<Demenageur*> getVectDemenageurs ( );
 
   /**
    * Set the value of dosChefEquipe
@@ -222,13 +223,13 @@ public:
    * Set the value of vectVehicule
    * @param new_var the new value of vectVehicule
    */
-  void setVectVehicule ( vector<Vehicule*> new_var );
+  void setVectVehicule ( QVector<Vehicule*> new_var );
 
   /**
    * Get the value of vectVehicule
    * @return the value of vectVehicule
    */
-  vector<Vehicule*> getVectVehicule ( );
+  QVector<Vehicule*> getVectVehicule ( );
 
 };
 
