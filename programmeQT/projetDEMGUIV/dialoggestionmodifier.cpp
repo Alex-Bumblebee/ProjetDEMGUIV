@@ -51,6 +51,23 @@ void DialogGestionModifier::chargerDemenageur()
 
         vectDemenageur.push_back(unDemenageur);
     }
+        //efface la liste
+        ui->listWidgetDemenageur->clear();
+        //pour chaque occurence du vecteur
+
+        for(int i=0; i<vectDemenageur.size();i++)
+        {
+            //concatene le nom avec le prenom
+            QString dem = vectDemenageur[i].getSalNom() + " " +vectDemenageur[i].getSalPrenom();
+            qDebug()<<dem;
+            //l'ajoute dans la liste en y associant en data l'id
+            QListWidgetItem* unDemenageur=new QListWidgetItem(dem);
+            unDemenageur->setData(32,QString::number(vectDemenageur[i].getSalId()));
+            ui->listWidgetDemenageur->addItem(unDemenageur);
+        }
+        //trie la liste
+        ui->listWidgetDemenageur->sortItems();
+
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
