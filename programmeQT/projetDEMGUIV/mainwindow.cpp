@@ -3,6 +3,8 @@
 #include "dialogabsence.h"
 #include "dialogGestionVehicules.h"
 #include "dialogCreerAgence.h"
+#include "dialogGestionCommercial.h"
+#include "dialoggestionmodifier.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -39,4 +41,16 @@ void MainWindow::on_pushButtonCreerAgence_clicked()
 {
         DialogCreerAgence diagCreerAgence;
         diagCreerAgence.exec();
+}
+
+void MainWindow::on_pushButtonCreerDossier_clicked()
+{
+    DialogGestionCommercial diagGestionCommercial;
+    diagGestionCommercial.exec();
+}
+
+void MainWindow::on_pushButtonModifierDossier_clicked()
+{
+    DialogGestionModifier diagGestionModifier;
+    diagGestionModifier.exec();
 }
