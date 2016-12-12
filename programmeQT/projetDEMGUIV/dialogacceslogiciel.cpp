@@ -1,5 +1,6 @@
 #include "dialogacceslogiciel.h"
 #include "ui_dialogacceslogiciel.h"
+#include <QSqlQuery>
 
 DialogAccesLogiciel::DialogAccesLogiciel(QWidget *parent) :
     QDialog(parent),
@@ -12,3 +13,14 @@ DialogAccesLogiciel::~DialogAccesLogiciel()
 {
     delete ui;
 }
+
+QString DialogAccesLogiciel::getLogin()
+{
+    return ui->lineEditUser->text();
+}
+
+QString DialogAccesLogiciel::getMdp()
+{
+    return ui->lineEditMdp->text();
+}
+
