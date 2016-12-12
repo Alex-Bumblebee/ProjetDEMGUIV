@@ -28,21 +28,15 @@ void DialogGestionModifier::chargerDemenageur()
     while(reqDemenageur.next())
     {
         int idDem=reqDemenageur.value(0).toInt();
-        QString nomDem1=reqDemenageur.value(1).toString();
-        QString prenomDem1=reqDemenageur.value(2).toString();
-        QString dateNaissanceDem1=reqDemenageur.value(3).toString();
-        QString dateEmbaucheDem1=reqDemenageur.value(4).toString();
-        QString adresseDem1=reqDemenageur.value(5).toString();
+        QString nomDem=reqDemenageur.value(1).toString();
+        QString prenomDem=reqDemenageur.value(2).toString();
+        QString dateNaissanceDem=reqDemenageur.value(3).toString();
+        QString dateEmbaucheDem=reqDemenageur.value(4).toString();
+        QString adresseDem=reqDemenageur.value(5).toString();
         int idAgenceDem=reqDemenageur.value(6).toInt();
-        QString idPermisDem1=reqDemenageur.value(7).toString();
+        QString idPermisDem=reqDemenageur.value(7).toString();
         int chefDem=reqDemenageur.value(8).toInt();
 
-        string nomDem=nomDem1.toStdString();
-        string prenomDem=prenomDem1.toStdString();
-        string dateNaissanceDem=dateNaissanceDem1.toStdString();
-        string dateEmbaucheDem=dateEmbaucheDem1.toStdString();
-        string adresseDem=adresseDem1.toStdString();
-        string idPermisDem=idPermisDem1.toStdString();
 
         Demenageur unDemenageur;
         unDemenageur.setSalId(idDem);
