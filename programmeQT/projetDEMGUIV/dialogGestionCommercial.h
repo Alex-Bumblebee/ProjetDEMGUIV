@@ -14,7 +14,8 @@ class DialogGestionCommercial : public QDialog
 public:
     explicit DialogGestionCommercial(QWidget *parent = 0);
     ~DialogGestionCommercial();
-    
+    void chargeLesVehiculesDispo();
+    void chargeLesDemenageursDispo();
 private:
     Ui::DialogGestionCommercial *ui;
 };
