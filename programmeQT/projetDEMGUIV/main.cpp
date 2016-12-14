@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
             do
             {
                 resultat = boiteDeCo.exec();
-                qDebug()<<resultat<<endl;
                 QString login = boiteDeCo.getLogin();
                 QString mdp = boiteDeCo.getMdp();
                 QString texteReq="SELECT * FROM User WHERE login = '"+login+"'and mdp = '"+mdp+"'";
@@ -38,6 +37,14 @@ int main(int argc, char *argv[])
             if(ok)
             {
                 MainWindow w;
+                QString login = boiteDeCo.getLogin();
+                QString mdp = boiteDeCo.getMdp();
+                QString texteReq = "SELECT idTypeUser FROM User WHERE login = '"+login+"' AND mdp = '"+mdp+"'";
+                QSqlQuery reqVerif(texteReq);
+                qDebug()<<texteReq<<endl;
+                reqVerif.first();
+                int leType = reqVerif.value(0).toInt();
+                w.setTypeUtilisateur(leType);
                 w.show();
                 return a.exec();
             }
