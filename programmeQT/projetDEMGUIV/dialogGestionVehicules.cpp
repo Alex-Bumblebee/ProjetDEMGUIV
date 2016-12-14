@@ -3,6 +3,7 @@
 #include "dialogGestionVehiculesAjout.h"
 #include <QSqlQuery>
 #include <QDebug>
+#include <QMessageBox>
 
 DialogGestionVehicules::DialogGestionVehicules(QWidget *parent) :
     QDialog(parent),
@@ -47,21 +48,30 @@ void DialogGestionVehicules::on_pushButtonAjoutVehicule_clicked()
 
 void DialogGestionVehicules::on_pushButtonSupprimerVehicule_clicked()
 {
-    //on selectionne une vehicule dans la liste
-    //on clique sur supprimer, une confirmation s'ouvre
-    int ligne=ui->tableWidgetVehicules->currentRow();
-    QString immat = ui->tableWidgetVehicules->item(ligne-1,1)->text();
-    //et que l'on clique sur supprimer,
-    //ça supprime la ligne du table widget et la ligne de la bdd
-    ui->tableWidgetVehicules->removeRow(ligne);
-    //debut de la requete
-    QSqlQuery reqDelete;
-    //texte de la requete
-    QString texteRequete="delete from Vehicule where immat='"+immat+"'";
-    reqDelete.exec(texteRequete);
-    chargeLesVehicules();
+    if(QMessageBox::question(this,"Gestion véhicules","Etes vous sur de vouloir supprimer ce véhicule ?",QMessageBox::Ok|QMessageBox::Cancel) == QMessageBox::Ok)
+    {
+        //on selectionne une vehicule dans la liste
+        //on clique sur supprimer, une confirmation s'ouvre
+        int ligne=ui->tableWidgetVehicules->currentRow();
+        QString immat = ui->tableWidgetVehicules->item(ligne-1,1)->text();
+        //et que l'on clique sur supprimer,
+        //ça supprime la ligne du table widget et la ligne de la bdd
+        ui->tableWidgetVehicules->removeRow(ligne);
+        //debut de la requete
+        QSqlQuery reqDelete;
+        //texte de la requete
+        QString texteRequete="delete from Vehicule where immat='"+immat+"'";
+        reqDelete.exec(texteRequete);
+        chargeLesVehicules();
 
-    qDebug () << texteRequete;
+        qDebug () << texteRequete;
+    }
+    else
+    {
+
+    }
+
+
 }
 
 void DialogGestionVehicules::on_tableWidgetVehicules_cellClicked(int row, int column)
