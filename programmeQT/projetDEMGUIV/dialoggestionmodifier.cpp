@@ -12,6 +12,7 @@ DialogGestionModifier::DialogGestionModifier(QWidget *parent) :
 
     chargerDemenageur();
     chargerVehicule();
+    chargerDossier();
 }
 
 DialogGestionModifier::~DialogGestionModifier()
@@ -20,10 +21,41 @@ DialogGestionModifier::~DialogGestionModifier()
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+void DialogGestionModifier::chargerDossier(){
+    qDebug()<<"DialogGestionModifier::chargerDemenageur()"<<endl;
+
+    ui->listWidgetDossier->clear();
+    int cpt=0;
+
+    QSqlQuery reqDossier("select id,dateDebutDem,dateFinDem,volume,adresseChargement,adresseLivraison from DossierDemenagement where etatDossier='ATT'");
+    while(reqDossier.next())
+    {
+        cpt++;
+        int idDossier=reqDossier.value(0).toInt();
+        QString dateDebutDemDossier=reqDossier.value(1).toString();
+        QString dateFinDemDossier=reqDossier.value(2).toString();
+        int volumeDossier=reqDossier.value(3).toInt();
+        QString adresseChargementDossier=reqDossier.value(4).toString();
+        QString adresseLivraisonDossier=reqDossier.value(5).toString();
+
+
+
+        //concatene le nom avec le prenom
+        QString dossier = reqDossier.value(0).toString();
+        qDebug()<<dossier;
+
+        QListWidgetItem* unDossier=new QListWidgetItem(dossier);
+        unDossier->setData(32,idDossier);
+        ui->listWidgetDossier->addItem(unDossier);
+
+    }
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void DialogGestionModifier::chargerDemenageur()
 {
     qDebug()<<"DialogGestionModifier::chargerDemenageur()"<<endl;
-
+/*
     QSqlQuery reqDemenageur("select id,nom,prenom,dateNaissance,dateEmbauche,adresse,idAgence,idPermis,chef from Salarie where typeSalarie='D' and etat='disponible'");
     while(reqDemenageur.next())
     {
@@ -51,28 +83,30 @@ void DialogGestionModifier::chargerDemenageur()
 
         vectDemenageur.push_back(unDemenageur);
     }
-        //efface la liste
-        ui->listWidgetDemenageur->clear();
-        //pour chaque occurence du vecteur
 
-        for(int i=0; i<vectDemenageur.size();i++)
+
+        ui->tableWidgetDemenageur->setRowCount(0);
+        ui->tableWidgetDemenageur->setRowCount(reqDemenageur.size());
+        for(unsigned int leCpt=0;leCpt<reqDemenageur.size();leCpt++)
         {
-            //concatene le nom avec le prenom
-            QString dem = vectDemenageur[i].getSalNom() + " " +vectDemenageur[i].getSalPrenom();
-            qDebug()<<dem;
-            //l'ajoute dans la liste en y associant en data l'id
-            QListWidgetItem* unDemenageur=new QListWidgetItem(dem);
-            unDemenageur->setData(32,vectDemenageur[i].getSalId());
-            ui->listWidgetDemenageur->addItem(unDemenageur);
-        }
-        //trie la liste
-        ui->listWidgetDemenageur->sortItems();
 
+
+            QTableWidgetItem *itemNomDem=new QTableWidgetItem(reqDemenageur.value(1).toString());
+
+            QTableWidgetItem *itemPrenomDem=new QTableWidgetItem(reqDemenageur.value(2).toString());
+
+            ui->tableWidgetDemenageur->*itemNomDem->setData(32,reqDemenageur.value(0).toString());
+            ui->tableWidgetDemenageur->setItem(leCpt,0,itemNomDem);
+            ui->tableWidgetDemenageur->setItem(leCpt,1,itemPrenomDem);
+
+
+        }*/
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 void DialogGestionModifier::chargerVehicule()
 {
+   /*
     qDebug()<<"DialogGestionModifier::chargerVehicule()"<<endl;
 
     QSqlQuery reqVehicule("select Vehicule.id,immat,modele,dateMiseCirculation,volumeUtile,hayon,couchette,nbPlaceCabine,ptac,frequenceEntretien,idAgence from Vehicule inner join TypeVehicule on Vehicule.idType=TypeVehicule.id where etat='disponible'");
@@ -108,29 +142,28 @@ void DialogGestionModifier::chargerVehicule()
     }
 
 
-    //efface la liste
-    ui->listWidgetVehicule->clear();
-    //pour chaque occurence du vecteur
-
-    for(int i=0; i<vectVehicule.size();i++)
+    ui->tableWidgetVehicule->setRowCount(0);
+    ui->tableWidgetVehicule->setRowCount(reqVehicule.size());
+    for(unsigned int leCpt=0;leCpt<reqVehicule.size();leCpt++)
     {
-        //concatene le nom avec le prenom
-        QString veh = vectVehicule[i].getVehType();
-        qDebug()<<veh;
-        //l'ajoute dans la liste en y associant en data l'id
-        QListWidgetItem* unVehicule=new QListWidgetItem(veh);
-        unVehicule->setData(32,vectVehicule[i].getVehId());
-        ui->listWidgetVehicule->addItem(unVehicule);
-    }
-    //trie la liste
-    ui->listWidgetVehicule->sortItems();
+
+        QTableWidgetItem *itemModeleVeh=new QTableWidgetItem(reqVehicule.value(2).toString());
+        *itemModeleVeh->setData(32,vectVehiculeAjouter[leCpt].getVehId());
+
+        QTableWidgetItem *itemVolumeVeh=new QTableWidgetItem(reqVehicule.value(4).toString());
+
+
+        ui->tableWidgetDemenageur->setItem(leCpt,0,itemModeleVeh);
+        ui->tableWidgetDemenageur->setItem(leCpt,1,itemVolumeVeh);
+    }*/
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 void DialogGestionModifier::on_pushButtonAddVehicule_clicked()
 {
-    QListWidgetItem* vehiculeChoisi=ui->listWidgetVehicule->currentItem();
+    /*
+    QTableWidgetItem* vehiculeChoisi=ui->tableWidgetVehicule->currentItem();
     int monVehicule=vehiculeChoisi->data(32).toInt();
     for(int cpt=0;cpt<vectVehicule.size();cpt++)
     {
@@ -143,7 +176,7 @@ void DialogGestionModifier::on_pushButtonAddVehicule_clicked()
     }
 
     //efface la liste
-    ui->listWidgetVehiculeDemenagement->clear();
+    ui->tableWidgetVehiculeAjouter->clear();
     //pour chaque occurence du vecteur
 
     for(int i=0; i<vectVehiculeAjouter.size();i++)
@@ -154,15 +187,17 @@ void DialogGestionModifier::on_pushButtonAddVehicule_clicked()
         //l'ajoute dans la liste en y associant en data l'id
         QListWidgetItem* unVehicule=new QListWidgetItem(veh);
         unVehicule->setData(32,vectVehiculeAjouter[i].getVehId());
-        ui->listWidgetVehiculeDemenagement->addItem(unVehicule);
+        ui->tableWidgetVehiculeAjouter->addItem(unVehicule);
     }
     //trie la liste
-    ui->listWidgetVehicule->sortItems();
-
+    ui->tableWidgetVehiculeAjouter->sortItems();
+*/
 }
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
 void DialogGestionModifier::on_pushButtonDelVehicule_clicked()
 {
+    /*
     QListWidgetItem* vehiculeChoisi=ui->listWidgetVehiculeDemenagement->currentItem();
     int monVehicule=vehiculeChoisi->data(32).toInt();
     for(int cpt=0;cpt<vectVehiculeAjouter.size();cpt++)
@@ -176,7 +211,7 @@ void DialogGestionModifier::on_pushButtonDelVehicule_clicked()
     }
 
     //efface la liste
-    ui->listWidgetVehiculeDemenagement->clear();
+    ui->tableWidgetVehiculeAjouter->clear();
     //pour chaque occurence du vecteur
 
     for(int i=0; i<vectVehiculeAjouter.size();i++)
@@ -187,8 +222,36 @@ void DialogGestionModifier::on_pushButtonDelVehicule_clicked()
         //l'ajoute dans la liste en y associant en data l'id
         QListWidgetItem* unVehicule=new QListWidgetItem(veh);
         unVehicule->setData(32,vectVehiculeAjouter[i].getVehId());
-        ui->listWidgetVehiculeDemenagement->addItem(unVehicule);
+        ui->tableWidgetVehiculeAjouter->addItem(unVehicule);
     }
     //trie la liste
-    ui->listWidgetVehicule->sortItems();
+    ui->tableWidgetVehiculeAjouter->sortItems();*/
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+void DialogGestionModifier::on_listWidgetDossier_itemClicked(QListWidgetItem *item)
+{
+    /*
+    QString requete="select id,dateDebutDem,dateFinDem,volume,adresseChargement,adresseLivraison from DossierDemenagement where etatDossier='ATT' and id='";
+    requete += item->text();
+    requete += "'";
+    QSqlQuery reqDossier(requete);
+
+    while(reqDossier.next())
+    {
+        int idDossier=reqDossier.value(0).toInt();
+        QString dateDebutDemDossier=reqDossier.value(1).toString();
+        QString dateFinDemDossier=reqDossier.value(2).toString();
+        int volumeDossier=reqDossier.value(3).toInt();
+        QString adresseChargementDossier=reqDossier.value(4).toString();
+        QString adresseLivraisonDossier=reqDossier.value(5).toString();
+
+        ui->labelAChargementDossier->setText(adresseChargementDossier);
+        ui->labelALivraisonDossier->setText(adresseLivraisonDossier);
+        ui->labelDateDebutDossier->setText(dateDebutDemDossier);
+        ui->labelDateFinDossier->setText(dateFinDemDossier);
+        ui->labelVolumeDossier->setText(QString::number(volumeDossier));
+    }
+*/
 }

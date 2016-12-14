@@ -2,7 +2,8 @@
 #define DIALOGGESTIONMODIFIER_H
 #include <QVector>
 #include "demenageur.h"
-
+#include <QListWidgetItem>
+#include <QTableWidget>
 #include <QDialog>
 
 namespace Ui {
@@ -18,10 +19,13 @@ public:
     ~DialogGestionModifier();
     void chargerDemenageur();
     void chargerVehicule();
+    void chargerDossier();
 private slots:
     void on_pushButtonAddVehicule_clicked();
 
     void on_pushButtonDelVehicule_clicked();
+
+    void on_listWidgetDossier_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::DialogGestionModifier *ui;

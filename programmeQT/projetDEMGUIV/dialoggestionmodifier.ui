@@ -6,186 +6,298 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1083</width>
-    <height>534</height>
+    <width>1002</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Modification d'un dossier</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_5">
+  <layout class="QHBoxLayout" name="horizontalLayout_10">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="listWidgetDossier"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QListWidget" name="listWidgetDossier"/>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <widget class="QLabel" name="labelDateDebut">
+           <property name="text">
+            <string>Date de debut:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelDateDebutDossier">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="labelDateFin">
+           <property name="text">
+            <string>Date de fin:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelDateFinDossier">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="labelAChargement">
+           <property name="text">
+            <string>Adresse de Chargement:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelAChargementDossier">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="labelALivraison">
+           <property name="text">
+            <string>Adresse de livraison:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelALivraisonDossier">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="labelVolume">
+           <property name="text">
+            <string>Volume:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelVolumeDossier">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QTableWidget" name="tableWidgetVehicule">
+           <column>
+            <property name="text">
+             <string>Modele</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Volume</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
            <item>
-            <widget class="QListWidget" name="listWidgetVehicule"/>
+            <widget class="QPushButton" name="pushButtonAddVehicule">
+             <property name="text">
+              <string>Ajouter vehicule &gt;</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</iconset>
+             </property>
+            </widget>
            </item>
            <item>
-            <spacer name="horizontalSpacer_4">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+            <widget class="QPushButton" name="pushButtonDelVehicule">
+             <property name="text">
+              <string>&lt; Retirer vehicule</string>
              </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</iconset>
              </property>
-            </spacer>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout">
-             <item>
-              <widget class="QPushButton" name="pushButtonAddVehicule">
-               <property name="text">
-                <string>Ajouter vehicule &gt;</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButtonDelVehicule">
-               <property name="text">
-                <string>&lt; Retirer vehicule</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</iconset>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_5">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QListWidget" name="listWidgetVehiculeDemenagement"/>
+            </widget>
            </item>
           </layout>
          </item>
          <item>
-          <spacer name="verticalSpacer">
+          <widget class="QTableWidget" name="tableWidgetVehiculeAjouter">
+           <column>
+            <property name="text">
+             <string>Modele</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Volume</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QTableWidget" name="tableWidgetDemenageur">
+           <column>
+            <property name="text">
+             <string>Nom</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Prenom</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_6">
            <property name="orientation">
-            <enum>Qt::Vertical</enum>
+            <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>20</width>
-             <height>40</height>
+             <width>40</width>
+             <height>20</height>
             </size>
            </property>
           </spacer>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QListWidget" name="listWidgetDemenageur"/>
+            <widget class="QPushButton" name="pushButtonAddDemenageur">
+             <property name="text">
+              <string>Ajouter demenageur &gt;</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</iconset>
+             </property>
+            </widget>
            </item>
            <item>
-            <spacer name="horizontalSpacer_6">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+            <widget class="QPushButton" name="pushButtonDelDemenageur">
+             <property name="text">
+              <string>&lt; Retirer demenageur</string>
              </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</iconset>
              </property>
-            </spacer>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_2">
-             <item>
-              <widget class="QPushButton" name="pushButtonAddDemenageur">
-               <property name="text">
-                <string>Ajouter demenageur &gt;</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/forward.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButtonDelDemenageur">
-               <property name="text">
-                <string>&lt; Retirer demenageur</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</normaloff>../../../../../usr/share/icons/gnome/24x24/actions/back.png</iconset>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_7">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QListWidget" name="listWidgetDemenageurAjouter"/>
+            </widget>
            </item>
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QComboBox" name="comboBoxChefEquipe"/>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="tableWidgetDemenageurAjouter">
+           <column>
+            <property name="text">
+             <string>Nom</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Prenom</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QComboBox" name="comboBoxChefEquipe"/>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
