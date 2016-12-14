@@ -1,7 +1,9 @@
 #include "dialogGestionVehicules.h"
 #include "ui_dialoggGestionVehicules.h"
+#include "dialogGestionVehiculesAjout.h"
 #include <QSqlQuery>
 #include <QDebug>
+#include <QMessageBox>
 
 DialogGestionVehicules::DialogGestionVehicules(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +11,7 @@ DialogGestionVehicules::DialogGestionVehicules(QWidget *parent) :
 {
     ui->setupUi(this);
     chargeLesVehicules();
+    ui->pushButtonSupprimerVehicule->setEnabled(false);
 }
 
 DialogGestionVehicules::~DialogGestionVehicules()
@@ -32,4 +35,48 @@ void DialogGestionVehicules::chargeLesVehicules()
         //on passe a la ligne suivante
         noLigne++;
     }
+}
+
+void DialogGestionVehicules::on_pushButtonAjoutVehicule_clicked()
+{
+    //on selectionne un vehicule dans la liste,
+    //on clique sur ajouter, une boite de dialogue s'ouvre,
+    //et nous demande toutes les infos necessaires
+    DialogGestionVehiculesAjout diagAjout;
+    diagAjout.exec();
+}
+
+void DialogGestionVehicules::on_pushButtonSupprimerVehicule_clicked()
+{
+    if(QMessageBox::question(this,"Gestion véhicules","Etes vous sur de vouloir supprimer ce véhicule ?",QMessageBox::Ok|QMessageBox::Cancel) == QMessageBox::Ok)
+    {
+        //on selectionne une vehicule dans la liste
+        //on clique sur supprimer, une confirmation s'ouvre
+        int ligne=ui->tableWidgetVehicules->currentRow();
+        QString immat = ui->tableWidgetVehicules->item(ligne-1,1)->text();
+        //et que l'on clique sur supprimer,
+        //ça supprime la ligne du table widget et la ligne de la bdd
+        ui->tableWidgetVehicules->removeRow(ligne);
+        //debut de la requete
+        QSqlQuery reqDelete;
+        //texte de la requete
+        QString texteRequete="delete from Vehicule where immat='"+immat+"'";
+        reqDelete.exec(texteRequete);
+        chargeLesVehicules();
+
+        qDebug () << texteRequete;
+    }
+    else
+    {
+
+    }
+
+
+}
+
+void DialogGestionVehicules::on_tableWidgetVehicules_cellClicked(int row, int column)
+{
+    //quand on selectionne une case pour la modifier,
+    //le bouton supprimer s'active
+    ui->pushButtonSupprimerVehicule->setEnabled(true);
 }

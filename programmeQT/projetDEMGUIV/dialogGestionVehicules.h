@@ -16,6 +16,13 @@ public:
     ~DialogGestionVehicules();
     void chargeLesVehicules();
     
+private slots:
+    void on_pushButtonAjoutVehicule_clicked();
+
+    void on_pushButtonSupprimerVehicule_clicked();
+
+    void on_tableWidgetVehicules_cellClicked(int row, int column);
+
 private:
     Ui::DialogGestionVehicules *ui;
 };

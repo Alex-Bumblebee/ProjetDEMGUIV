@@ -14,6 +14,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void setTypeUtilisateur(int leType);
 
 private slots:
     void on_pushButtonGestionDemenagements_clicked();

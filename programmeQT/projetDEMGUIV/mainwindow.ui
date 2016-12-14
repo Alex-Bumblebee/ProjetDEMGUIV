@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Menu principal</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -62,7 +62,14 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Bonjour ,</string>
+          <string>Qualification : </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelLogin">
+         <property name="text">
+          <string>_</string>
          </property>
         </widget>
        </item>
@@ -162,20 +169,6 @@
      </item>
     </layout>
    </widget>
-   <zorder></zorder>
-   <zorder></zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>pushButtonDemandeAbsence</zorder>
-   <zorder>pushButtonCreerDossier</zorder>
-   <zorder>pushButtonModifierDossier</zorder>
-   <zorder>pushButtonAgenda</zorder>
-   <zorder>pushButtonGererVehicules</zorder>
-   <zorder>pushButtonCreerAgence</zorder>
-   <zorder>pushButtonGererSalaries</zorder>
-   <zorder>horizontalSpacer</zorder>
-   <zorder>horizontalSpacer_2</zorder>
-   <zorder>verticalSpacer</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
