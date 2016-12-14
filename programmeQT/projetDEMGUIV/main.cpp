@@ -36,7 +36,6 @@ int main(int argc, char *argv[])
             while(!(ok || resultat == 0));
             if(ok)
             {
-
                 MainWindow w;
                 QString login = boiteDeCo.getLogin();
                 QString mdp = boiteDeCo.getMdp();
@@ -48,7 +47,6 @@ int main(int argc, char *argv[])
                 w.setTypeUtilisateur(leType);
                 w.show();
                 return a.exec();
-
             }
             else
             {

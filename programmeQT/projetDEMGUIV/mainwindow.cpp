@@ -72,6 +72,7 @@ void MainWindow::setTypeUtilisateur(int leType)
     {
     case 1 :
         //ADMIN
+        ui->labelLogin->setText("Admin");
         break;
     case 2 :
         //Tous
@@ -83,6 +84,7 @@ void MainWindow::setTypeUtilisateur(int leType)
         ui->pushButtonGererSalaries->setEnabled(false);
         ui->pushButtonGererVehicules->setEnabled(false);
         ui->pushButtonModifierDossier->setEnabled(false);
+        ui->labelLogin->setText("Employé");
         break;
     case 3 :
         //Commercial
@@ -94,6 +96,7 @@ void MainWindow::setTypeUtilisateur(int leType)
         ui->pushButtonGererSalaries->setEnabled(false);
         ui->pushButtonGererVehicules->setEnabled(false);
         ui->pushButtonModifierDossier->setEnabled(false);
+        ui->labelLogin->setText("Commercial");
         break;
     case 4:
         //Chef D'exploitation
@@ -105,6 +108,7 @@ void MainWindow::setTypeUtilisateur(int leType)
         ui->pushButtonGererSalaries->setEnabled(false);
         ui->pushButtonGererVehicules->setEnabled(false);
         ui->pushButtonCreerDossier->setEnabled(false);
+        ui->labelLogin->setText("Chef d'exploitation");
         break;
     case 5:
         //Demenageur
@@ -115,6 +119,8 @@ void MainWindow::setTypeUtilisateur(int leType)
         ui->pushButtonGererVehicules->setEnabled(false);
         ui->pushButtonCreerDossier->setEnabled(false);
         ui->pushButtonModifierDossier->setEnabled(false);
+        ui->labelLogin->setText("Déménageur");
+        break;
     case 6:
         //Chef D'equipe
         ui->pushButtonCreerAgence->setEnabled(false);
@@ -124,6 +130,7 @@ void MainWindow::setTypeUtilisateur(int leType)
         ui->pushButtonGererVehicules->setEnabled(false);
         ui->pushButtonCreerDossier->setEnabled(false);
         ui->pushButtonModifierDossier->setEnabled(false);
+        ui->labelLogin->setText("Chef d'equipe");
         break;
     case 7:
         //Directeur Ressources
@@ -133,9 +140,11 @@ void MainWindow::setTypeUtilisateur(int leType)
         ui->pushButtonCreerDossier->setEnabled(false);
         ui->pushButtonModifierDossier->setEnabled(false);
         ui->pushButtonDemandeAbsence->setEnabled(false);
+        ui->labelLogin->setText("Directeur Ressources");
         break;
     case 8:
         //Patron
+        ui->labelLogin->setText("Patron");
         break;
 
     }
